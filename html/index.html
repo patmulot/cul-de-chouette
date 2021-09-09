@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cul de Chouette</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dices.style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header container-fluid">
+            <h1 id="titre">Cul de Chouette</h1>
+    </div>
+    
+    <div class="container">
+
+        <div id="board">
+
+            <div class="dices_table">
+                <div class="dice_container dice_container3">
+                    <div id="dice3" class="dice">
+                        <div class="dot fig_mid hidden visible"></div>
+                        <div class="dot fig_top_left hidden visible"></div>
+                        <div class="dot fig_top_right hidden"></div>
+                        <div class="dot fig_mid_left hidden"></div>
+                        <div class="dot fig_mid_right hidden"></div>
+                        <div class="dot fig_bot_left hidden"></div>
+                        <div class="dot fig_bot_right hidden visible"></div>
+                    </div>
+                </div>
+                <div class="dice_container dice_container2">
+                    <div id="dice2" class="dice">
+                        <div class="dot fig_mid hidden"></div>
+                        <div class="dot fig_top_left hidden visible"></div>
+                        <div class="dot fig_top_right hidden visible"></div>
+                        <div class="dot fig_mid_left hidden"></div>
+                        <div class="dot fig_mid_right hidden"></div>
+                        <div class="dot fig_bot_left hidden visible"></div>
+                        <div class="dot fig_bot_right hidden visible"></div>
+                    </div>
+                </div>
+                <div class="dice_container dice_container1">
+                    <div id="dice1" class="dice">
+                        <div class="dot fig_mid hidden visible"></div>
+                        <div class="dot fig_top_left hidden visible"></div>
+                        <div class="dot fig_top_right hidden"></div>
+                        <div class="dot fig_mid_left hidden"></div>
+                        <div class="dot fig_mid_right hidden"></div>
+                        <div class="dot fig_bot_left hidden"></div>
+                        <div class="dot fig_bot_right hidden visible"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scoretable_container">
+            
+                <div class="scoretable display_none">
+                    <h3>Score history :</h3>
+                    <ul class="scored"></ul>
+                </div>
+
+                <input id="score_button" type="button" value="S">
+                
+            </div>
+
+                
+        </div>
+
+        <div class="endgame display_none">
+            <h2>Bravo !!!</h2>
+            <div class="endgame_img"></div>
+            <p>
+                tu as gagné avec un score total de <span></span>.
+            </p>
+            <a href="index.html" class="col-12 col-sm-6">&#60;&#60; Nouvelle partie &#62;&#62;</a>
+        </div>
+
+        <div class="score_container row">
+            <div  class="col-12 col-md-4 score_style">Tour n° 
+                <span>0</span>
+            </div>
+            <h2 class="col-12 col-md-4 score_style">Score :</h2>
+            <div id="score_cell" class="col-12 col-md-4 score_style">0</div>
+        </div>
+        
+        <div class="button_container col-12">
+            <input id="launcher" type="button" value="Lancer la Chouette">
+        </div>
+            </div>
+    
+    <div class="footer container-fluid row">
+        <h3 class="col-12 col-sm-6">Test</h3>
+        <a href="index.html" class="col-12 col-sm-6">&#60;&#60; Nouvelle partie &#62;&#62;</a>
+    </div>
+    
+    
+    <script src="js/styleJs.js"></script>
+    <script src="js/dices.js"></script>
+    <script src="js/figures.js"></script>
+    <script src="js/scores.js"></script>
+    <script src="js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+/* ------ANIMATION DES------ */
+.dice_container1 {
+    transition-duration: 0.5s;
+    bottom: 0;
+    right: 0;
+}
+.dice_container2 {
+    transition-duration: 0.5s;
+    bottom: 0;
+    right: 4%;
+}
+.dice_container3 {
+    transition-duration: 0.5s;
+    bottom: 0;
+    right: 8%;
+}
+.rollAnim1 {
+    transform: translate(-35vw, -27vh) rotateZ(65deg) scale(0.8);
+    transition-duration: 0.5s;
+}
+.rollAnim2 {
+    transform: translate(-31vw, -12vh) rotateZ(-235deg) scale(0.8);
+    transition-duration: 0.9s;
+}
+.rollAnim3 {
+    transform: translate(-10vw, -37vh) rotateZ(325deg) scale(0.8);
+    transition-duration: 1s;
+}
+/* CHANGEMENT DE LA POSITION DES DES POUR IA */
+.ia_dice1 {
+    transition-duration: 0.5s;
+    top: 4%;
+    left: 0;
+    bottom: auto;
+    right: auto;
+}
+.ia_dice2 {
+    transition-duration: 0.5s;
+    top: 4%;
+    left: 4%;
+    bottom: auto;
+    right: auto;
+}
+.ia_dice3 {
+    transition-duration: 0.5s;
+    top: 4%;
+    left: 8%;
+    bottom: auto;
+    right: auto;
+}
+.rollAnimIa1 {
+    transform: translate(35vw, 27vh) rotateZ(65deg) scale(0.8);
+    transition-duration: 0.5s;
+}
+.rollAnimIa2 {
+    transform: translate(31vw, 12vh) rotateZ(-235deg) scale(0.8);
+    transition-duration: 0.9s;
+}
+.rollAnimIa3 {
+    transform: translate(10vw, 37vh) rotateZ(325deg) scale(0.8);
+    transition-duration: 1s;
+}
+/* ------ASPECT DES DES------ */
+.dice {
+    width: 4rem;
+    height: 4rem;
+    background-color: rgb(236, 236, 236);
+    border: solid 2px rgb(71, 71, 71);
+    border-radius: 0.7em;
+    box-shadow: 0px 0px 20px black, inset 0px 0px 10px rgb(53, 53, 53);
+    position: relative;
+}
+#dice3{
+    background-color: lightgreen;
+}
+.fig_mid {
+    top: calc(50% - 0.4rem); /* calc(moitié du dés - moitié du point) */
+    left: calc(50% - 0.4rem); /* calc(moitié du dés - moitié du point) */
+}
+.fig_top_left {
+    top: 0.3rem;
+    left: 0.3rem;
+}
+.fig_top_right {
+    top: 0.3rem;
+    right: 0.3rem;
+}
+.fig_mid_left {
+    top: calc(50% - 0.4rem); /* calc(moitié du dés - moitié du point) */
+    left: 0.3rem;
+}
+.fig_mid_right {
+    top: calc(50% - 0.4rem); /* calc(moitié du dés - moitié du point) */
+    right: 0.3rem;
+}
+.fig_bot_left {
+    bottom: 0.3rem;
+    left: 0.3rem;
+}
+.fig_bot_right {
+    bottom: 0.3rem;
+    right: 0.3rem;
+}
+.dot {
+    position: absolute;
+    height: 0.8rem;
+    width: 0.8rem;
+    border-radius: 0.5rem;
+    background-color: rgb(66, 66, 66);
+    border: solid 2px black;
+    box-sizing: border-box;
+}
+.hidden {
+    visibility: hidden;
+}
+.visible {
+    visibility: visible;
+}
