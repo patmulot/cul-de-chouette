@@ -23,7 +23,6 @@ const figures = {
             let figure = 'CHOUETTE de ' + dice1 + ' !';
 
             rules.isSirotage = 1;
-            console.log(' RULES IS SIROTAGE = ' + rules.isSirotage );
 
             app.action = app.currentPlayer + ' viens de faire une '+figure;
             return figure
@@ -31,7 +30,6 @@ const figures = {
             let figure = 'CHOUETTE de ' + dice2 + ' !';
 
             rules.isSirotage = 1;
-            console.log(' RULES IS SIROTAGE = ' + rules.isSirotage );
             
             app.action = app.currentPlayer + ' viens de faire une '+figure;
             return figure
@@ -39,7 +37,6 @@ const figures = {
             let figure = 'CHOUETTE de ' + dice3 + ' !';
             
             rules.isSirotage = 1;
-            console.log(' RULES IS SIROTAGE = ' + rules.isSirotage );
             
             app.action = app.currentPlayer + ' viens de faire une '+figure;
             return figure
@@ -108,11 +105,9 @@ const figures = {
     getAllSiropsStats : function() {
         for(let index = 0; index < scores.siropTab.length; index++) {
             if (scores.siropTab[index] == ' Sirotage réussi !') {
-                console.log(' sirop gagné ');
                 figures.allSirops[0] += 1;
                 figures.allSirops[1] += 1;
             } else if (scores.siropTab[index] == ' Sirotage perdu !') {
-                console.log(' sirop perdu ');
                 figures.allSirops[0] += 1;
                 figures.allSirops[2] += 1;
             } else {};

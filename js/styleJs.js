@@ -13,7 +13,6 @@ const styleJs = {
   resize : function() {
     if (document.getElementById('view_score_button')) {
       let docWidth = document.body.clientWidth;
-      console.log(docWidth);
       if (docWidth > 992) {
         scoreTableContainer.style.position = 'inherit';
         scoreTableContainer.style.padding = '0 10px';
@@ -48,8 +47,6 @@ if ( location.href == "http://localhost/neo/mes-travaux/cul%20de%20chouette/cdc_
   selectElement.addEventListener('input', function () {
   selectElement.options[selectElement.selectedIndex].value;
   let playerName = selectElement.options[selectElement.selectedIndex].text;
-  console.log('redirection');
-  console.log(playerName);
   location.href="index.php?page=stats&player="+playerName;
   })
 };

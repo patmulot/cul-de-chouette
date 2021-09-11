@@ -127,7 +127,6 @@ const dices = {
     checkAnimClassNone : function() {
         let dice1 = document.querySelector('.dice_container1');
         if ( dice1.classList.contains("rollAnim1") ) {
-            console.log('dés 1 ok');
         } else {
             let diceIndex = 0;
             return diceIndex;
@@ -135,14 +134,12 @@ const dices = {
 
         let dice2 = document.querySelector('.dice_container2');
         if ( dice2.classList.contains("rollAnim2") ) {
-            console.log('dés 2 ok');
         } else {
             let diceIndex = 1;
             return diceIndex;
         }
         let dice3 = document.querySelector('.dice_container3');
         if ( dice3.classList.contains("rollAnim3") ) {
-            console.log('dés 3 ok');
         } else {
             let diceIndex = 2;
             return diceIndex;
@@ -153,10 +150,8 @@ const dices = {
         //! A AMELIORER AVEC BOUCLE ET TABLEAU
         //! --------------------------------------------
         let diceIndex = dices.checkAnimClassNone();
-        console.log(diceIndex);
 
         let diceNbr = 'dice'+(diceIndex +1);
-        console.log(diceNbr);
 
         let currentDice = document.querySelector('.dice_container'+(diceIndex +1));
         currentDice.classList.add("rollAnim"+(diceIndex +1));
@@ -165,7 +160,6 @@ const dices = {
     /* ----------------------- I A -----------------------*/
     /* -------------------------------------------------- */
     iaDicesPositions : function() {
-        console.log("(IA #1) IA a prit les dés")
         let dice1RemoveClass = document.querySelector('.dice_container1');
         dice1RemoveClass.classList.add("ia_dice1");
         let dice2RemoveClass = document.querySelector('.dice_container2');

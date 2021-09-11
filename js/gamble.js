@@ -20,14 +20,12 @@ const gamble = {
             if  (currentElementClicked.classList.contains("gamble_dice_"+i) ) {
                 // alert('prout prout');
                 gamble.selectedDice = i;
-                console.log('dés parié : ' + gamble.selectedDice);
                 gamble.hydeGamblePlayer();
             }
         }
     },
     displayGamblePlayer : function() {
         let gambleBtnsElement = document.querySelector('.gamble_buttons');
-        console.log('display');
         if ( gambleBtnsElement.classList.contains("hidden") ) {
         gambleBtnsElement.classList.remove("hidden");
         gambleBtnsElement.classList.add("visible")
@@ -37,7 +35,6 @@ const gamble = {
     },
     hydeGamblePlayer : function() {
         let gambleBtnsElement = document.querySelector('.gamble_buttons');
-        console.log('display');
         if ( gambleBtnsElement.classList.contains("visible") ) {
         gambleBtnsElement.classList.remove("visible");
         gambleBtnsElement.classList.add("hidden")
@@ -52,7 +49,6 @@ const gamble = {
                 gamble.gambleAction = gamble.gamblePlayer + " a gagné son pari";
 
                 gamble.iaScoreGamble = 25;
-                console.log('gamble iaScoreGamble = ' + gamble.iaScoreGamble);
                 gamble.scoreGamble = 0;
                 iaPlayer1.player1scoreTab.push(gamble.scoreGamble);
 

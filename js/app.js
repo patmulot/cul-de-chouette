@@ -57,9 +57,7 @@ const app = {
         // styleJs.resize();
 
         app.currentPlayer = app.player;
-        console.log(app.currentPlayer);
         gamble.gamblePlayer = iaPlayer1.player1Name;
-        console.log(gamble.gamblePlayer);
 
         if (app.btn.value === 'Lancer la Chouette') {
             app.launchBtnChouette();
