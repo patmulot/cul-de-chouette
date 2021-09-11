@@ -59,12 +59,18 @@ header ul {
 .header_link {
     border-bottom: solid 2px var(--border-color2);
 }
+.header_logo-link h1 {
+    height: 100%;
+    display: flex;
+    align-self: center;
+}
 .logo {
-    height: 50px;
+    max-height: 50px;
 }
 .header_logo-container {
     display: flex;
     align-items: center;
+    background-color: var(--main-bg-color);
 }
 .header_logo-container h1 {
     font-size: 2rem;
@@ -133,6 +139,9 @@ header ul {
         font-size: 0.8rem;
         padding: 0;
         margin: 0;
+    }
+    .header_logo-link img {
+        display: none;
     }
 }
 .game_container {
