@@ -44,7 +44,7 @@
             <input id="view_score_button" type="button" value="S">
         </div>
     </div>
-    <div class="gamble_buttons row hidden">
+    <div class="gamble_buttons row display_none">
         <div class="col-3"></div>
         <div class="col-1"><i class="fas fa-dice-one gamble_dice gamble_dice_1"></i></div>
         <div class="col-1"><i class="fas fa-dice-two gamble_dice gamble_dice_2"></i></div>

@@ -26,20 +26,20 @@ const gamble = {
     },
     displayGamblePlayer : function() {
         let gambleBtnsElement = document.querySelector('.gamble_buttons');
-        if ( gambleBtnsElement.classList.contains("hidden") ) {
-        gambleBtnsElement.classList.remove("hidden");
-        gambleBtnsElement.classList.add("visible")
+        if ( gambleBtnsElement.classList.contains("display_none") ) {
+        gambleBtnsElement.classList.remove("display_none");
+        gambleBtnsElement.classList.add("display_flex")
         } else {
-            gambleBtnsElement.classList.add("visible")
+            gambleBtnsElement.classList.add("display_flex")
         }
     },
     hydeGamblePlayer : function() {
         let gambleBtnsElement = document.querySelector('.gamble_buttons');
-        if ( gambleBtnsElement.classList.contains("visible") ) {
-        gambleBtnsElement.classList.remove("visible");
-        gambleBtnsElement.classList.add("hidden")
+        if ( gambleBtnsElement.classList.contains("display_flex") ) {
+        gambleBtnsElement.classList.remove("display_flex");
+        gambleBtnsElement.classList.add("display_none")
         } else {
-            gambleBtnsElement.classList.add("hidden")
+            gambleBtnsElement.classList.add("display_none")
         }
     },
     checkGamblePlayer : function() {

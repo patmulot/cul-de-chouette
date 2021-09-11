@@ -129,6 +129,11 @@ header ul {
         min-height: 9vh;
         padding-top: 0.4rem;
     }
+    .ia_log{
+        font-size: 0.8rem;
+        padding: 0;
+        margin: 0;
+    }
 }
 .game_container {
     background-color: rgb(70, 37, 37);
@@ -260,7 +265,6 @@ ul .titles {
     border-radius: 10vw;
     position: relative;
     margin: 0 auto;
-    /* max-width: 678px; */
 }
 @media screen and (max-width: 575px) {
     .dices_table {
@@ -289,9 +293,6 @@ ul .titles {
 }
 /*-------SCORE----------*/
 .score_container {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     text-align: center;
     padding: 5px;
 }
@@ -300,7 +301,6 @@ ul .titles {
     justify-content: center;
     align-items: center;
     font-size: 1.2em;
-    /* margin: 0 5px; */
     padding: 5px 10px;
 }
 #score_cell {
@@ -390,6 +390,12 @@ ul .titles {
 }
 .visible {
     visibility: visible;
+}
+.display_none {
+    display: none;
+}
+.display_flex {
+    display: flex;
 }
 /*--------- STATS PAGE -----------*/
 li span {
