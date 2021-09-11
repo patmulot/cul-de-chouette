@@ -22,7 +22,7 @@
         </div> -->
         <h1 class="header-title">CUL DE CHOUETTE</h1>
         <div class="row text-center header_nav-container">
-            <div class="col-6 col-sm-2 header_logo-container">
+            <div class="col-3.2 col-sm-2 header_logo-container">
                 <a class="header_logo-link" href="index.php?page=home"><img class ="logo" src="img/dice_icon.ico" alt="LOGO"><h1>CdC</h1></a>
             </div>
             <nav class="col-12 col-sm-10 nav-links-container">
