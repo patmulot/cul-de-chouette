@@ -13,15 +13,49 @@ body {
     background-color: var(--main-bg-color);
     font-family: 'MedievalSharp', cursive;
     text-shadow: var(--text-shadow);
-    height: 100vh;
-    min-width: 350px;
     justify-content: space-between;
     padding: 0;
+    margin: 0;
+    min-width: 300px;
+    max-width: 100vw;
+    max-height: 100vh;
 }
-/* .header_nav-container {
+/*----------HEADER-----------*/
+.header, .footer {
+    padding-top: 10px;
+    background-color: var(--main-bg-color);
+    border: solid 2px var(--border-color2);
+    box-shadow: var(--text-shadow-color);
+    text-align: center;
+}
+header {
+    min-height: 13vh;
+}
+.header_logo-link {
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+.header-title {
     display: flex;
-    flex-direction: row;
-} */
+    width: 100%;
+    /* background-color: #f0f; */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+header ul {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+.header_link {
+    border-bottom: solid 2px var(--border-color2);
+}
+.logo {
+    height: 50px;
+}
 .header_logo-container {
     display: flex;
     align-items: center;
@@ -36,8 +70,13 @@ body {
 .header_logo-container img {
     display: flex;
     align-items: center;
+    position: relative;
+}
+.header_nav-container {
+    height: 100%;
 }
 .nav-links-container {
+    height: 100%;
     overflow: auto;
     transition-duration: 300ms;
     box-shadow: none;
@@ -49,10 +88,17 @@ body {
     color: var(--main-font-color);
     text-shadow: var(--text-shadow);
     font-size: 1.4rem;
+    width: 100%;
 }
 .burger-container {
     display: none;
     cursor: pointer;
+}
+.burger-container-button {
+    align-items: center;
+    margin: auto;
+    background-color: transparent;
+    border: none;
 }
 .burger-container:hover {
     background-color: rgba(255, 255, 255, 0.1);
@@ -62,13 +108,20 @@ body {
         display: none;
     }
     .header_logo-container {
+        position: absolute;
+        padding-top: 0.4rem;
+    }
+    .header-title {
         display: none;
+        background-color: green;
     }
     .burger-container {
+        margin-top: 1rem;
         display: flex;
     }
-    .nav-links-container {
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.596);
+    header {
+        min-height: 9vh;
+        padding-top: 0.4rem;
     }
 }
 .game_container {
@@ -79,6 +132,7 @@ body {
     position: relative;
     color : var(--main-font-color);
     margin-bottom: 2rem;
+    /* height: 80vh; */
 }
 .article {
     background-image: url(../img/background_paper.jpg);
@@ -131,30 +185,6 @@ h2 {
 }
 h3 {
     font-size: 1.4rem;
-}
-/*----------HEADER-----------*/
-.header, .footer {
-    padding-top: 10px;
-    background-color: var(--main-bg-color);
-    border: solid 2px var(--border-color2);
-    box-shadow: var(--text-shadow-color);
-    text-align: center;
-}
-/* header {
-    min-height: var(--header-height);
-} */
-header ul {
-    margin: 0;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0;
-}
-.header_link {
-    border-bottom: solid 2px var(--border-color2);
-}
-.logo {
-    height: 50px;
 }
 /*----------FOOTER-----------*/
 .footer {
@@ -335,18 +365,6 @@ ul .titles {
     background-position: right 35% bottom 45%;
     align-items: bottom;
     padding: 20%;
-}
-.header_logo-link {
-    display:flex;
-    justify-content: center;
-    text-align: center;
-}
-.header-title {
-    display: flex;
-    width: 100%;
-    /* background-color: #f0f; */
-    margin-bottom: 0;
-    padding-bottom: 0;
 }
 /* .fixed {
     position: fixed;

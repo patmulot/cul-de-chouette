@@ -20,7 +20,9 @@ const app = {
         styleJs.EditIaPlayerLog();
 
         let burgerElement = document.querySelector(".burger-container");
+        // let burgerElement = document.querySelector(".burger-icon");
         burgerElement.addEventListener("click", app.handleClickOnBurgerIcon);
+        // burgerElement.addEventListener("click", app.handleClickOnBurgerIcon);
         window.addEventListener('resize', app.displayBurgerLinks);
     },
     burgerStatus: true,
@@ -194,5 +196,10 @@ const app = {
         rules.checkSirop(dice1Value, dice2Value, dice3Value);
     },
 }
-// styleJs.resize();
+styleJs.resize();
+let burgerElement = document.querySelector(".burger-container");
+// let burgerElement = document.querySelector(".burger-icon");
+burgerElement.addEventListener("click", app.handleClickOnBurgerIcon);
+// burgerElement.addEventListener("click", app.handleClickOnBurgerIcon);
+window.addEventListener('resize', app.displayBurgerLinks);
 document.addEventListener('DOMContentLoaded', app.init);
