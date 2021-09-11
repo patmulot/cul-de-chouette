@@ -289,10 +289,10 @@ ul .titles {
 }
 /*-------SCORE----------*/
 .score_container {
-    display: flex;
+    /* display: flex;
     justify-content: center;
+    align-items: center; */
     text-align: center;
-    align-items: center;
     padding: 5px;
 }
 .score_style {
@@ -300,16 +300,17 @@ ul .titles {
     justify-content: center;
     align-items: center;
     font-size: 1.2em;
-    margin: 0 5px;
+    /* margin: 0 5px; */
     padding: 5px 10px;
 }
 #score_cell {
     display: block;
-    width: 6rem;
+    width: 5.6rem;
     text-align: center;
     color : var(--main-font-color);
     box-shadow: inset 0px 0px 10px black;
     border: solid 2px rgb(90, 74, 66);
+    margin-left: 0.4rem;
 }
 /*----------BUTTONS :-----------*/
 #launcher, #view_score_button, #launch_sirop, #submit_score_btn, .button_add_score, #ia_hide_button {
