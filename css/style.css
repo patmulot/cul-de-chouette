@@ -181,7 +181,9 @@ ul .titles {
         width: 95vw;
     }
 }
+
 @media screen and (min-width: 575px) {
+
     #launcher:hover,
     #launch_sirop:hover {
         font-size: 1.2em;
@@ -423,15 +425,15 @@ li span {
         background-color: green;
     }
 
+    header {
+        min-height: auto;
+        /* padding-top: 0.4rem; */
+        padding: 1rem 0;
+    }
     .burger-container {
-        min-height: 9vh;
+        min-height: 100%;
         display: flex;
         align-items: center;
-    }
-
-    header {
-        min-height: 9vh;
-        padding-top: 0.4rem;
     }
 
     .ia_log {
@@ -444,9 +446,13 @@ li span {
         display: flex;
     }
 
-    /* .header_logo-link img {
-        display: none;
-    } */
+    .header_link a {
+        display: block;
+        width: 90%;
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 0.6rem;
+    }
     p {
         margin: 0;
     }

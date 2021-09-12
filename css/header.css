@@ -68,7 +68,8 @@ header ul {
     position: relative;
 }
 .header_nav-container {
-    height: 100%;
+    display: flex;
+    align-items: center;
 }
 .nav-links-container {
     height: 100%;
