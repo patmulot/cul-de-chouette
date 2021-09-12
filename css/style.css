@@ -181,6 +181,16 @@ ul .titles {
         width: 95vw;
     }
 }
+@media screen and (min-width: 575px) {
+    #launcher:hover,
+    #launch_sirop:hover {
+        font-size: 1.2em;
+        font-weight: normal;
+        color: lightgreen;
+        border: solid 2px lightgreen;
+        background-color: rgb(121, 204, 121);
+    }
+}
 
 .dice_container {
     margin: 0 10px;
