@@ -58,9 +58,8 @@ const iaPlayer1 = {
         // SIROTAGE
         iaPlayer1.time += 500;
         setTimeout( "iaPlayer1.handleDiceToRoll()" ,iaPlayer1.time);
-
         // Relance du dés siroté
-        iaPlayer1.time += iaPlayer1.timeSirop; //!
+        iaPlayer1.time += iaPlayer1.timeSirop + 1000; //!
         setTimeout( "iaPlayer1.iaSirotage()" ,iaPlayer1.time);
         
         iaPlayer1.time += 500;
