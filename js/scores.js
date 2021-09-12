@@ -217,7 +217,7 @@ const scores = {
         let tr = scores.scoreTab.length;
         let stats = scores.scoreTab;
         let finalScoreMsg = document.querySelector('.finalScore');
-        if ( scoreMax > 10) {
+        if ( scoreMax > 343) {
             figures.getAllFiguresStats();
             figures.getAllSiropsStats();
             finalScoreMsg.textContent = scoreMax;
@@ -248,7 +248,7 @@ const scores = {
             // MESSAGE DE VICTOIRE :
             divEndgame.classList.remove('display_none');
             spanTotalScore.name = scoreMax;
-        } else if (scoreIaMax > 10) {
+        } else if (scoreIaMax > 343) {
             divLostgame.classList.remove('display_none');
         } else {};
     },
