@@ -22,128 +22,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-/*----------HEADER-----------*/
-.header, .footer {
-    padding-top: 10px;
-    background-color: var(--main-bg-color);
-    border: solid 2px var(--border-color2);
-    box-shadow: var(--text-shadow-color);
-    text-align: center;
-}
-/* .footer {
-    position: relative;
-    bottom: 0;
-} */
-header {
-    min-height: 13vh;
-}
-.header_logo-link {
-    display:flex;
-    justify-content: center;
-    text-align: center;
-}
-.header-title {
-    display: flex;
-    width: 100%;
-    /* background-color: #f0f; */
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-header ul {
-    margin: 0;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0;
-}
-.header_link {
-    border-bottom: solid 2px var(--border-color2);
-}
-.header_logo-link h1 {
-    height: 100%;
-    display: flex;
-    align-self: center;
-}
-.logo {
-    max-height: 50px;
-}
-.header_logo-container {
-    display: flex;
-    align-items: center;
-    background-color: var(--main-bg-color);
-}
-.header_logo-container h1 {
-    font-size: 2rem;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
-.header_logo-container img {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-.header_nav-container {
-    height: 100%;
-}
-.nav-links-container {
-    height: 100%;
-    overflow: auto;
-    transition-duration: 300ms;
-    box-shadow: none;
-}
-.burger_links {
-    display: flex;
-}
-.burger-icon {
-    color: var(--main-font-color);
-    text-shadow: var(--text-shadow);
-    font-size: 1.4rem;
-    width: 100%;
-}
-.burger-container {
-    display: none;
-    cursor: pointer;
-}
-.burger-container-button {
-    align-items: center;
-    margin: auto;
-    background-color: transparent;
-    border: none;
-}
-.burger-container:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-@media screen and (max-width: 575px) {
-    .burger_links {
-        display: none;
-    }
-    .header_logo-container {
-        position: absolute;
-        padding-top: 0.4rem;
-    }
-    .header-title {
-        display: none;
-        background-color: green;
-    }
-    .burger-container {
-        margin-top: 1rem;
-        display: flex;
-    }
-    header {
-        min-height: 9vh;
-        padding-top: 0.4rem;
-    }
-    .ia_log{
-        font-size: 0.8rem;
-        padding: 0;
-        margin: 0;
-    }
-    .header_logo-link img {
-        display: none;
-    }
-}
 .game_container {
     background-color: rgb(70, 37, 37);
     border: solid 2px var(--border-color2);
@@ -152,7 +30,6 @@ header ul {
     position: relative;
     color : var(--main-font-color);
     margin-bottom: 2rem;
-    /* height: 80vh; */
 }
 .article {
     background-image: url(../img/background_paper.jpg);
@@ -293,8 +170,8 @@ ul .titles {
 /*-------CURRENT ACTION------*/
 .ia_log {
     position: absolute;
-    top: 1%;
-    left: 1%;
+    top: 4px;
+    left: 4px;
     border: solid 2px var(--border-color2);
     background-color: rgba(78, 23, 23, 0.7);
     padding: 0.5rem;
@@ -344,6 +221,7 @@ ul .titles {
     position: relative;
     display: flex;
     justify-content: center;
+    margin-bottom: 1rem;
 }
 #launch_sirop{
     display: none;
@@ -366,10 +244,8 @@ ul .titles {
     box-shadow: 0px 0px 20px black;
     border: solid 2px var(--border-color2);
     background-color: var(--main-bg-color);
-    padding: 5px 5px;
     /*-------- TEXT -----------*/
-    color: #f0f;
-    text-shadow: var(--text-shadow);
+    text-shadow: 0px 0px 10px black;
     text-align: center;
     font-weight: 800;
     font-size: 2rem;
@@ -380,15 +256,36 @@ ul .titles {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right 35% bottom 45%;
-    align-items: bottom;
-    padding: 20%;
+    display: flex;
+    justify-content: center;
+    z-index: 200;
 }
-/* .fixed {
-    position: fixed;
-} */
+.new_game-link {
+    background-color: var(--main-bg-color);
+    border: solid 2px var(--border-color2);
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+.endgame-content {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.endgame p {
+    margin-top: 1rem;
+    margin: 0 1rem;
+}
+#score_list {
+    width: 100%;
+    overflow: auto;
+    padding: 0;
+}
 .endgame>h2 {
     font-size: 3rem;
-    color: #f0f;
+    text-shadow: 0px 0px 10px black;
 }
 .hidden_score, .hidden_round_nb , .hidden_fig_stats, .hidden_sirop_stats {
     position: absolute;
@@ -406,7 +303,61 @@ ul .titles {
 .display_flex {
     display: flex;
 }
+.player_name-input {
+    width: 90%;
+    margin: auto;
+}
+.endgame form {
+    margin-top: 1rem;
+}
+#submit_score_btn {
+    width: 90%;
+    margin: auto;
+    margin-top: 1rem;
+}
 /*--------- STATS PAGE -----------*/
 li span {
     font-weight: bolder;
+}
+@media screen and (max-width: 575px) {
+    .endgame h2 {
+        font-size: 2.2rem;
+    }
+    .endgame p, .endgame form {
+        font-size: 1.6rem;
+    }
+    .burger_links {
+        display: none;
+    }
+    .header_logo-container {
+        position: absolute;
+        padding-top: 0.4rem;
+    } 
+    .header-title {
+        display: none;
+        background-color: green;
+    }
+    .burger-container {
+        min-height: 9vh;
+        display: flex;
+        align-items: center;
+    }
+    header {
+        min-height: 9vh;
+        padding-top: 0.4rem;
+    }
+    .ia_log{
+        font-size: 0.8rem;
+        padding: 0;
+        margin: 0;
+    }
+    .header_logo-burger {
+        display: flex;
+    }
+    /* .header_logo-link img {
+        display: none;
+    } */
+    p {
+        margin: 0;
+    }
 }

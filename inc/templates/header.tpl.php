@@ -8,25 +8,24 @@
     <link rel="icon" type="" href="img/dice_icon.ico" />
     <link rel="stylesheet" href="css/reset.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/dices-style.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dices.style.css">
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 </head>
 <body>
     <header class="container-fluid">
-        <!-- <div class="row text-center">
-            <i class="col-4 fas fa-dice-three dice_icon"></i>
-            <i class="col-4 fas fa-dice-four dice_icon"></i>
-            <i class="col-4 fas fa-dice-three dice_icon"></i>
-        </div> -->
         <h1 class="header-title">CUL DE CHOUETTE</h1>
         <div class="row text-center header_nav-container">
-            <div class="col-3 col-sm-2 header_logo-container">
+            <div class="col-3 col-sm-2 header_logo-container header_logo">
                 <a class="header_logo-link" href="index.php?page=home"><img class ="logo" src="img/dice_icon.ico" alt="LOGO"><h1>CdC</h1></a>
             </div>
             <nav class="col-12 col-sm-10 nav-links-container">
                 <ul class="row burger_links">
+                    <li class="col-12 col-sm-3 header_logo-burger">
+                        <a class="header_logo-link" href="index.php?page=home"><img class ="logo" src="img/dice_icon.ico" alt="LOGO"><h1>CdC</h1></a>
+                    </li>
                     <li class="col-12 col-sm-3 header_link">
                         <a href="index.php?page=rules">Rules</a>
                     </li>

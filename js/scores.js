@@ -204,18 +204,20 @@ const scores = {
         ' : score = ' + scores.scoreTab[scores.scoreTab.length - 1] +
         ' (' + scores.checkFigure() + scores.siropTab[scores.siropTab.length - 1]+') ';
         liScoreTab.innerHTML += '<hr>';
-        ulScoreTab.appendChild(liScoreTab); 
+        ulScoreTab.appendChild(liScoreTab);
+        ulScoreTab.scrollTop += 100;
     },
     checkFinalScore : function () {
         app.currentRuleAction = '';
         let scoreMax = parseInt(scores.scoreSum[scores.scoreSum.length -1 ]);
         let scoreIaMax = parseInt(iaPlayer1.player1scoreSum[iaPlayer1.player1scoreSum.length -1 ]);
-        let divEndgame = document.querySelector('.endgame');
+        let divEndgame = document.querySelector('.win');
+        let divLostgame = document.querySelector('.lost');
         let spanTotalScore = divEndgame.querySelector('span');
         let tr = scores.scoreTab.length;
         let stats = scores.scoreTab;
         let finalScoreMsg = document.querySelector('.finalScore');
-        if ( scoreMax > 343) {
+        if ( scoreMax > 10) {
             figures.getAllFiguresStats();
             figures.getAllSiropsStats();
             finalScoreMsg.textContent = scoreMax;
@@ -246,8 +248,8 @@ const scores = {
             // MESSAGE DE VICTOIRE :
             divEndgame.classList.remove('display_none');
             spanTotalScore.name = scoreMax;
-        } else if (scoreIaMax > 343) {
-            alert ('Perceval à gagné');
+        } else if (scoreIaMax > 10) {
+            divLostgame.classList.remove('display_none');
         } else {};
     },
 }
