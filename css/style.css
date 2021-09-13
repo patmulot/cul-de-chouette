@@ -194,6 +194,13 @@ ul .titles {
     }
     .score_container div {
         font-size: 1rem;
+        padding: 0;
+    }
+    #board {
+        padding: 1rem 0;
+    }
+    .button_container {
+        height: 3.6rem;
     }
 }
 
