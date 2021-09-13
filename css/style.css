@@ -197,6 +197,7 @@ ul .titles {
 @media screen and (min-width: 575px) {
 
     #launcher:hover,
+    #view_score_button:hover,
     #launch_sirop:hover {
         font-size: 1.2em;
         font-weight: normal;
@@ -275,7 +276,7 @@ ul .titles {
 }
 
 #launcher:active,
-#view_score_button:hover,
+#view_score_button:active,
 #launch_sirop:active,
 .button_add_score:hover {
     font-size: 1.2em;
