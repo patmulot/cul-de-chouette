@@ -18,9 +18,13 @@ const app = {
         }
 
         styleJs.EditIaPlayerLog();
-// NEW BURGER : 
-burger.init();
-// NEW BURGER : 
+
+        
+        // NEW BURGER : 
+        burger.init();
+        // NEW BURGER : 
+
+
         // let burgerElement = document.querySelector(".burger-container");
         // let burgerElement = document.querySelector(".burger-icon");
         // burgerElement.addEventListener("click", app.handleClickOnBurgerIcon);

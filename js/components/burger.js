@@ -2,8 +2,8 @@ const burger = {
     'init': function () {
         const burgerIconElement = document.querySelector(".burger-icon");
         burgerIconElement.addEventListener("click", burger.handleClickOneBurgerIcon);
-        // window.addEventListener('resize', burger.displayBurgerLinks);
-        document.querySelector("main").addEventListener("click", burger.handleClickOnBody);
+        window.addEventListener('resize', burger.handleClickOnBody);
+        // document.querySelector("main").addEventListener("click", burger.handleClickOnBody);
     },
     handleClickOneBurgerIcon(evt) {
         evt.preventDefault();
