@@ -12,7 +12,6 @@
             
             <?php 
             $nbr = 1;
-            //! AJOUTER LIEN SUR NOM DE JOUEUR VERS STATS JOUEUR
             foreach ($topScore as $key => $value): ?>
                 <li class="row">
                     <div class="col-3">

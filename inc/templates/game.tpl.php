@@ -100,10 +100,10 @@
     </div>
 
     <div class="score_container row">
-        <div  class="col-6 col-sm-4 score_style">Tour n° 
+        <div  class="col-6 score_style">Tour n° 
             <span id="counter">0</span>
         </div>
-        <div class="col-6 col-sm-4 score_style">Score :
+        <div class="col-6 score_style">Score 
             <span id="score_cell" class="score_style">0</span>
         </div>
     </div>

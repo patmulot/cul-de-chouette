@@ -192,6 +192,9 @@ ul .titles {
     .dices_table {
         width: 95vw;
     }
+    .score_container div {
+        font-size: 1rem;
+    }
 }
 
 @media screen and (min-width: 575px) {
