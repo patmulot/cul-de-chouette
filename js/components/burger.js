@@ -4,7 +4,6 @@ const burger = {
         burgerIconElement.addEventListener("click", burger.handleClickOneBurgerIcon);
         // window.addEventListener('resize', burger.displayBurgerLinks);
         document.querySelector("main").addEventListener("click", burger.handleClickOnBody);
-        console.log("burger js loaded");
     },
     handleClickOneBurgerIcon(evt) {
         evt.preventDefault();
@@ -16,10 +15,13 @@ const burger = {
         headerLogoElement.classList.toggle("active-header-logo");
     },
     handleClickOnBody(evt) {
+        console.log("body clicked");
         evt.preventDefault();
         let burgerButton = document.querySelector(".burger-icon");
         let linksToDisplayElements = document.querySelector(".nav_links-container");
+        let headerLogoElement = burgerButton.closest(".nav-container").querySelector(".nav-header_logo");
         burgerButton.classList.remove("active-burger");
         linksToDisplayElements.classList.remove("active-burger-links");
+        headerLogoElement.classList.remove("active-header-logo");
     }
 }
