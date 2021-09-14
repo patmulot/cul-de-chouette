@@ -16,55 +16,14 @@ const app = {
         if (scoreBtn) {
             siropBtn.addEventListener('click', app.launchSirop);
         }
-
         styleJs.EditIaPlayerLog();
-
-        
         // NEW BURGER : 
         burger.init();
-        // NEW BURGER : 
-
-
-        // let burgerElement = document.querySelector(".burger-container");
-        // let burgerElement = document.querySelector(".burger-icon");
-        // burgerElement.addEventListener("click", app.handleClickOnBurgerIcon);
-        // burgerElement.addEventListener("click", app.handleClickOnBurgerIcon);
         window.addEventListener('resize', app.displayBurgerLinks);
-        window.addEventListener('resize', function() {
             if (window.window.innerWidth < 575) {
-                document.body.requestFullScreen();
+                window.scrollTo(0, 32);
             }
-        })
     },
-    // burgerStatus: true,
-    // handleClickOnBurgerIcon(evt) {
-    //     evt.preventDefault();
-    //     let headerLogo = document.querySelector(".header_logo");
-    //     let navElementToDisplay = document.querySelector(".burger_links");
-    //     let libContainerElement = document.querySelector(".nav-links-container");
-    //     if (app.burgerStatus === true) {
-    //         headerLogo.style.display = "none";
-    //         navElementToDisplay.style.display = "flex";
-    //         libContainerElement.scrollTop = 1000;
-    //         app.burgerStatus = false;
-    //     } else if (app.burgerStatus === false) {
-    //         headerLogo.style.display = "flex";
-    //         navElementToDisplay.style.display = "none";
-    //         app.burgerStatus = true;
-    //     };
-    // },
-    // displayBurgerLinks(evt) {
-    //     evt.preventDefault();
-    //     let headerLogo = document.querySelector(".header_logo");
-    //     let navElementToDisplay = document.querySelector(".burger_links");
-    //     if (window.window.innerWidth > 575) {
-    //         navElementToDisplay.style.display = "flex";
-    //     } else {
-    //         navElementToDisplay.style.display = "none";
-    //     };
-    //     headerLogo.style.display = "flex";
-    //     styleJs.resize();
-    // },
     player: 'Tu',
     currentPlayer: [],
     btn: document.getElementById('launcher'),
