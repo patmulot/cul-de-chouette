@@ -37,9 +37,10 @@
             </div>
         </div>
         <div class="scoretable_container">
-            <div class="scoretable display_none">
+            <div class="scoretable">
                 <h3>Score history :</h3>
                 <ul id="score_list">
+                    <hr>
                 </ul>
             </div>
             <input id="view_score_button" type="button" value="S">

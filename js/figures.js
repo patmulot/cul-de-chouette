@@ -5,7 +5,7 @@ const figures = {
     figureCdc : function(dice1, dice2, dice3) {
         if ( dice1 == dice2 && dice2 == dice3 ) {
             let figure = 'CUL DE CHOUETTE !!!';
-            app.action = app.currentPlayer + ' viens de faire une '+figure;
+            app.action = app.currentPlayer + ' viens de faire un '+figure;
             return figure;
         } else { return };
     },

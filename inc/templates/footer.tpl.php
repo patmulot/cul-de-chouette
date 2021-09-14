@@ -1,13 +1,11 @@
     </main>
-    <div class="footer container-fluid row">
-        <nav class="nav row">
-            <ul class="row">
-                <li class="col-12 col-sm-7">
+    <div class="footer container-fluid">
+        <nav class="nav">
+            <ul class="row footer_links-container">
+                <li class="footer_link">
+                    <a href="index.php?page=home"><img class="header_logo-img" class="logo" src="img/dice_icon.ico" alt="LOGO">CdC</a>
                 </li>
-                <li class="col-12 col-sm-2">
-                    <a href="index.php?page=home"><img class="header_logo-img" class="logo" src="img/dice_icon.ico" alt="LOGO"></a>
-                </li>
-                <li class="col-12 col-sm-3">
+                <li class="footer_link">
                     <a href="index.php?page=game">Nouvelle partie <i class="fas fa-dice dice_icon"></i></a>
                 </li>
             </ul>

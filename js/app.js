@@ -150,15 +150,16 @@ const app = {
         dices.dicesTab[currentDiceAnimationClass] = diceSiropValue;
         app.btn.value = 'Tour suivant ?';
     },
-    scoreCollapse: function () {
-        let scoreTable = document.querySelector('.scoretable');
-        if (scoreTable.classList.contains('visible')) {
-            scoreTable.classList.remove('visible');
-            scoreTable.classList.add('display_none');
-        } else {
-            scoreTable.classList.remove('display_none');
-            scoreTable.classList.add('visible');
-        }
+    scoreCollapse: function (evt) {
+        evt.currentTarget.closest(".scoretable_container").classList.toggle("scoretable_actif");
+        // let scoreTable = document.querySelector('.scoretable');
+        // if (scoreTable.classList.contains('visible')) {
+        //     scoreTable.classList.remove('visible');
+        //     scoreTable.classList.add('display_none');
+        // } else {
+        //     scoreTable.classList.remove('display_none');
+        //     scoreTable.classList.add('visible');
+        // }
     },
     playerAction: function (currentAction) {
         let Action = currentAction;
