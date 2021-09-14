@@ -187,13 +187,10 @@ const scores = {
         scoreCell.textContent = parseInt(result);
         // réinitialisation du coef positif
         scores.coef[0] = 1;
-        console.log('coef réinitialisé : '+scores.coef);
 
         let iaScoreGamble = parseInt(gamble.iaScoreGamble);
-        console.log('iaScoreGamble = ' + iaScoreGamble);
 
         let iaResult = iaScoreGamble + iaPlayer1.player1scoreSum[iaPlayer1.player1scoreSum.length -1 ];
-        console.log('iaresult = ' + iaResult);
         iaPlayer1.player1scoreSum.push(parseInt(iaResult));
 
         let iaScoreCell = document.getElementById('score_cell_ia');
@@ -207,22 +204,22 @@ const scores = {
         ' : score = ' + scores.scoreTab[scores.scoreTab.length - 1] +
         ' (' + scores.checkFigure() + scores.siropTab[scores.siropTab.length - 1]+') ';
         liScoreTab.innerHTML += '<hr>';
-        ulScoreTab.appendChild(liScoreTab); 
+        ulScoreTab.appendChild(liScoreTab);
+        ulScoreTab.scrollTop += 100;
     },
     checkFinalScore : function () {
         app.currentRuleAction = '';
         let scoreMax = parseInt(scores.scoreSum[scores.scoreSum.length -1 ]);
         let scoreIaMax = parseInt(iaPlayer1.player1scoreSum[iaPlayer1.player1scoreSum.length -1 ]);
-        let divEndgame = document.querySelector('.endgame');
+        let divEndgame = document.querySelector('.win');
+        let divLostgame = document.querySelector('.lost');
         let spanTotalScore = divEndgame.querySelector('span');
         let tr = scores.scoreTab.length;
         let stats = scores.scoreTab;
-        console.log(stats);
         let finalScoreMsg = document.querySelector('.finalScore');
         if ( scoreMax > 343) {
             figures.getAllFiguresStats();
             figures.getAllSiropsStats();
-            console.log('Bravo tu as gagné, score max : ' + scoreMax);
             finalScoreMsg.textContent = scoreMax;
             // envoi du score caché
             let hiddenScore = document.querySelector('.hidden_score');
@@ -252,9 +249,7 @@ const scores = {
             divEndgame.classList.remove('display_none');
             spanTotalScore.name = scoreMax;
         } else if (scoreIaMax > 343) {
-            console.log("(IA 13) IA a gagné la partie")
-            alert ('Perceval à gagné');
+            divLostgame.classList.remove('display_none');
         } else {};
-        console.log("(IA #12) check du score fin de partie")
     },
 }

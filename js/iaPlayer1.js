@@ -12,11 +12,8 @@ const iaPlayer1 = {
     iaStartRound : function() {
 
         app.currentPlayer = iaPlayer1.player1Name;
-        console.log( app.currentPlayer );
         gamble.gamblePlayer = app.player;
-        console.log( gamble.gamblePlayer) ;
         rules.isSirotage = 0;
-        console.log(' RULES IS SIROTAGE = ' + rules.isSirotage );
 
         // styleJs.resize(); // check de la dimension de la page avec replacement des éléments si besoin.
         iaPlayer1.time = 500; //? Initialisation a 500ms ?
@@ -39,7 +36,6 @@ const iaPlayer1 = {
         setTimeout("iaPlayer1.checkSirotageIa()", iaPlayer1.time);
     },
     iaEndRound : function() {
-        console.log("(IA #9) execution fin de tour")
         app.playerAction(app.action);
         // app.currentRuleAction = '';
         // 3 --------------- FIN DE TOUR DE L'IA :
@@ -52,7 +48,6 @@ const iaPlayer1 = {
         setTimeout("scores.checkFinalScore()", iaPlayer1.time);
 
         rules.isSirotage = 0;
-        console.log(' RULES IS SIROTAGE = ' + rules.isSirotage );
 
         iaPlayer1.timeSirop = 0;
         rules.currentRule = '';
@@ -63,9 +58,8 @@ const iaPlayer1 = {
         // SIROTAGE
         iaPlayer1.time += 500;
         setTimeout( "iaPlayer1.handleDiceToRoll()" ,iaPlayer1.time);
-
         // Relance du dés siroté
-        iaPlayer1.time += iaPlayer1.timeSirop; //!
+        iaPlayer1.time += iaPlayer1.timeSirop + 1000; //!
         setTimeout( "iaPlayer1.iaSirotage()" ,iaPlayer1.time);
         
         iaPlayer1.time += 500;
@@ -75,7 +69,6 @@ const iaPlayer1 = {
         setTimeout("iaPlayer1.iaEndRound()", iaPlayer1.time);
     },
     player1Chouette : function() {
-        console.log("(IA #2) IA a lancé la chouette")
         // déclaration variable pour la valeur randoms du premier dés
         let dice1Value = dices.diceRand();
         // supression de la class CSS visible
@@ -96,7 +89,6 @@ const iaPlayer1 = {
         dices.diceChouetteAnimationIa();
     },
     player1Cdc : function() {
-        console.log("(IA #3) IA a lancé le cul de la chouette")
         // création de la variable pour la valeur random du dés
         let dice3Value = dices.diceRand();
         dices.deleteVisible(2);
@@ -106,7 +98,6 @@ const iaPlayer1 = {
         app.btn.value = 'Perceval a lancé le cul de la chouette...';
     },
     scoreCellIa : function(currentValue) {
-        console.log("(IA #10) ajout du score IA")
         let coef = iaPlayer1.player1coef[0];
         let scoreValue = parseInt(currentValue * coef);
         iaPlayer1.player1scoreTab.push(parseInt(scoreValue));
@@ -122,10 +113,8 @@ const iaPlayer1 = {
         iaPlayer1.player1coef[0] = 1;
 
         let scoreGamble = parseInt(gamble.scoreGamble);
-        console.log('scoreGamble = ' + scoreGamble);
 
         let result = scoreGamble + scores.scoreSum[scores.scoreSum.length -1 ];
-        console.log('result = ' + result);
         scores.scoreSum.push(parseInt(result));
 
         let scoreCell = document.getElementById('score_cell');
@@ -133,7 +122,6 @@ const iaPlayer1 = {
         gamble.scoreGamble = 0;
     },
     iaNext : function() {
-        console.log("(IA #11) fin du tour IA")
         app.btn.value = 'Lancer la Chouette';
         dices.resetAnimation();
     },
@@ -162,19 +150,15 @@ const iaPlayer1 = {
         // CONIDITONS DU CHOIX DE SIROTAGE DE L'IA :
         let choice = Math.floor( Math.random() * 2); // Décision random 0 = pas de sirotage, 1 = sirotage.
         if ( choice == 1 ) { 
-            console.log("(IA #5) IA choisit de siroter")
             iaPlayer1.iaStartSirop();
         } else {
-            console.log("(IA #5) IA choisit de ne pas siroter")
             app.action = app.currentPlayer + ' a choisi de ne pas siroter...';
             iaPlayer1.iaEndRound();
         };
         rules.isSirotage = choice
-        console.log(' RULES IS SIROTAGE = ' + rules.isSirotage );
     },
     handleDiceToRoll : function() {
         gamble.displayGamblePlayer();
-        console.log("(IA #6) IA a prit le dés pour siroter")
 
         app.action = app.currentPlayer + ' a choisit de siroter...';
         app.playerAction(app.action);
@@ -186,7 +170,6 @@ const iaPlayer1 = {
     },
     iaSirotage : function() {
         gamble.hydeGamblePlayer();
-        console.log("(IA #7) IA sirote")
         let diceIndex = iaPlayer1.siropDiceToRoll;
         let diceNb = iaPlayer1.siropDiceToRoll + 1;
         let diceToRoll = document.querySelector('.dice_container' + diceNb);
@@ -204,17 +187,8 @@ const iaPlayer1 = {
         let iaGambleChoice = Math.floor( Math.random() * 6) +1;
         gamble.selectedDice = iaGambleChoice;
         gamble.gambleAction = app.gamblePlayer + ' a parié sur un ' + iaGambleChoice;
-        console.log('ia gamble = ' + iaGambleChoice);
-        console.log('ia gamble = ' + iaGambleChoice);
-        console.log('ia gamble = ' + iaGambleChoice);
-        console.log('ia gamble = ' + iaGambleChoice);
-        console.log('ia gamble = ' + iaGambleChoice);
-        console.log('ia gamble = ' + iaGambleChoice);
-        console.log('ia gamble = ' + iaGambleChoice);
-        console.log('ia gamble = ' + iaGambleChoice);
     },
     checkSiropIaSuccess : function() {
-        console.log("(IA #8) IA check succes sirop")
         if ( rules.isSirotage == 1 ) {
             rules.checkSiropSuccess();
             iaPlayer1.player1siropTab.push(rules.checkSiropSuccess());
@@ -232,12 +206,10 @@ const iaPlayer1 = {
         let chouetteString = checkChouetteString.substr(0,8);
 
         if( chouetteString == "CHOUETTE" && scores.checkFigure() !== "CHOUETTE VELUTE !!" ) {
-            console.log("(IA #4) IA sirotage possible")
             iaPlayer1.timeSirop = 3000; // initialisation du temps de pause pour fonction gamble
             iaPlayer1.iaChoiceSirotage();
             iaPlayer1.getDiceToRoll();
         } else {
-            console.log("(IA #4) IA sirotage pas possible ?")
             iaPlayer1.timeSirop = 0;
             iaPlayer1.iaEndRound();
         };

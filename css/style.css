@@ -1,198 +1,183 @@
 :root {
     --main-bg-color: rgb(78, 23, 23);
-    --main-font-color : rgba(255, 215, 82, 0.781);
-    --border-color : rgb(73, 62, 56);
-    --border-color2: rgba(201, 170, 67, 0.582);
+    /* --main-font-color: rgba(255, 215, 82, 0.781); */
+    --main-font-color: rgb(206, 173, 64);
+    --border-color: rgb(73, 62, 56);
+    /* --border-color2: rgba(201, 170, 67, 0.582); */
+    --border-color2: rgb(143, 114, 35);
     --text-shadow-color: 0px 0px 9px rgba(0, 0, 0, 0.733);
     --header-height: 115px;
     --footer-height: 48px;
-  }
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
     background-color: var(--main-bg-color);
     font-family: 'MedievalSharp', cursive;
     text-shadow: var(--text-shadow);
-    height: 100vh;
-    min-width: 350px;
-    justify-content: space-between;
     padding: 0;
-}
-/* .header_nav-container {
+    margin: 0;
+    min-width: 300px;
+    min-height: 100vh;
+    max-width: 100vw;
     display: flex;
-    flex-direction: row;
-} */
-.header_logo-container {
-    display: flex;
-    align-items: center;
+    flex-direction: column;
+    overflow: auto;
 }
-.header_logo-container h1 {
-    font-size: 2rem;
+
+ul {
     margin: 0;
     padding: 0;
+}
+
+main {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    z-index: 1;
 }
-.header_logo-container img {
-    display: flex;
-    align-items: center;
-}
-.nav-links-container {
-    overflow: auto;
-    transition-duration: 300ms;
-    box-shadow: none;
-}
-.burger_links {
-    display: flex;
-}
-.burger-icon {
-    color: var(--main-font-color);
-    text-shadow: var(--text-shadow);
-    font-size: 1.4rem;
-}
-.burger-container {
-    display: none;
-    cursor: pointer;
-}
-.burger-container:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-@media screen and (max-width: 575px) {
-    .burger_links {
-        display: none;
-    }
-    .header_logo-container {
-        display: none;
-    }
-    .burger-container {
-        display: flex;
-    }
-    .nav-links-container {
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.596);
-    }
-}
+
 .game_container {
     background-color: rgb(70, 37, 37);
     border: solid 2px var(--border-color2);
-    box-shadow: var(--text-shadow-color);
     padding: 0;
     position: relative;
-    color : var(--main-font-color);
-    margin-bottom: 2rem;
+    color: var(--main-font-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    flex-grow: 1;
 }
+
+/*----------BOARD-----------*/
+#board {
+    display: flex;
+    padding: 20px 0;
+    position: relative;
+    height: 58vh;
+    max-height: 58vh;
+}
+
 .article {
     background-image: url(../img/background_paper.jpg);
     background-size: cover;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.397), 0px 0px 15px rgba(0, 0, 0, 0.603) inset;
-    border-top: solid 1rem rgb(90, 74, 66) ;
-    border-bottom: solid 1rem rgb(90, 74, 66) ;
-    border-left: solid 2px rgb(90, 74, 66) ;
-    border-right: solid 2px rgb(90, 74, 66) ;
+    border-top: solid 1rem rgb(90, 74, 66);
+    border-bottom: solid 1rem rgb(90, 74, 66);
+    border-left: solid 2px rgb(90, 74, 66);
+    border-right: solid 2px rgb(90, 74, 66);
     padding: 1rem 1rem;
     margin: 0.5rem auto;
-    color:rgba(0, 0, 0, 0.781);
+    color: rgba(0, 0, 0, 0.781);
     min-height: calc(100% - var(--header-height) - var(--footer-height) - 1rem);
+    flex-grow: 1;
 }
+
 .article h1 {
-    color:rgba(0, 0, 0, 0.781)
+    color: rgba(0, 0, 0, 0.781)
 }
+
 section {
     padding-bottom: 1rem;
 }
+
 a {
     text-decoration: none;
-    color : var(--main-font-color);
+    color: var(--main-font-color);
     text-shadow: var(--text-shadow);
     font-size: 1.4rem;
 }
-a:hover, .name_link:hover {
+
+a:hover,
+.name_link:hover {
     color: rgb(187, 187, 187);
     font-weight: bolder;
 }
+
 .name_link {
     text-decoration: none;
-    color : black;
+    color: black;
     text-shadow: var(--text-shadow);
     font-size: 1.4rem;
 }
+
 h1 {
     margin: 0;
     padding: 1rem;
     text-align: center;
     font-size: 1.8em;
     font-weight: bolder;
-    color : var(--main-font-color);
+    color: var(--main-font-color);
     justify-content: center;
 }
+
 h2 {
     font-size: 1.6em;
     padding: 0.5rem 0;
     font-weight: bolder;
 }
+
 h3 {
     font-size: 1.4rem;
 }
-/*----------HEADER-----------*/
-.header, .footer {
-    padding-top: 10px;
-    background-color: var(--main-bg-color);
-    border: solid 2px var(--border-color2);
-    box-shadow: var(--text-shadow-color);
-    text-align: center;
-}
-/* header {
-    min-height: var(--header-height);
-} */
-header ul {
-    margin: 0;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0;
-}
-.header_link {
-    border-bottom: solid 2px var(--border-color2);
-}
-.logo {
-    height: 50px;
-}
+
 /*----------FOOTER-----------*/
 .footer {
     min-height: var(--footer-height);
+}
+.footer_links-container {
+    display: flex;
+    flex-direction: row;
     margin: 0;
 }
-/*----------BOARD-----------*/
-#board {
+.footer_link {
     display: flex;
-    padding: 20px 0;
-    position: relative;
+    justify-content: center;
+    width: 100%;
 }
+.footer_link a {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 0;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+}
+
+.scoretable_container {
+    display: flex;
+    height: auto;
+    max-height: 100%;
+}
+
 #view_score_button {
+    display: none;
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
-    position: relative;
-    right: 1em;
+    position: absolute;
+    top: 4px;
+    right: 4px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.397);
 }
-.scoretable_container {
-    display: flex;
-    position: absolute;
-    right: 0;
-}
+
 .scoretable {
     display: flex;
     flex-direction: column;
-    width: 30vw;
+    width: 20vw;
     font-weight: 900;
-    background-color: var(--main-bg-color);
+    background-color: rgba(0, 0, 0, 0.2);
     border: solid 2px var(--border-color2);
+    border-radius: 1rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     align-items: center;
     padding: 5px;
     position: relative;
     right: -2px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.397);
 }
+
 .scored {
     height: 10vh;
     font-weight: normal;
@@ -200,36 +185,36 @@ header ul {
     margin: 0;
     overflow: auto;
 }
+
 .scoretable li {
     font-size: 0.9rem;
     font-weight: normal;
 }
-ul p, li {
+
+ul p,
+li {
     text-align: center;
 }
+
 ul .titles {
     font-weight: bolder;
     text-align: center;
 }
+
 /*----------DICES-----------*/
 .dices_table {
-    height: 58vh;
-    max-height: 58vh;
-    width: 60vw;
+    height: 100%;
+    width: 70vw;
     background-image: url(../img/background_wood.jpg);
     background-size: contain;
     box-shadow: 0px 0px 15px black, inset 0px 0px 10px black;
     border: solid 6px rgba(71, 60, 54, 0.9);
     border-radius: 10vw;
     position: relative;
-    margin: 0 auto;
-    /* max-width: 678px; */
+    margin: 0 1rem;
 }
-@media screen and (max-width: 575px) {
-    .dices_table {
-        width: 95vw;
-    }
-}
+
+
 .dice_container {
     margin: 0 10px;
     display: flex;
@@ -237,79 +222,103 @@ ul .titles {
     justify-content: center;
     position: absolute;
 }
+
 .display_none {
     display: none;
 }
+
 /*-------CURRENT ACTION------*/
 .ia_log {
     position: absolute;
-    top: 1%;
-    left: 1%;
+    top: 4px;
+    left: 4px;
     border: solid 2px var(--border-color2);
     background-color: rgba(78, 23, 23, 0.7);
     padding: 0.5rem;
     text-shadow: var(--text-shadow-color);
 }
+
 /*-------SCORE----------*/
 .score_container {
-    display: flex;
-    justify-content: center;
     text-align: center;
-    align-items: center;
     padding: 5px;
+    margin: 0;
 }
+
 .score_style {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2em;
-    margin: 0 5px;
     padding: 5px 10px;
 }
+
 #score_cell {
     display: block;
-    width: 6rem;
+    width: 5.6rem;
     text-align: center;
-    color : var(--main-font-color);
+    color: var(--main-font-color);
     box-shadow: inset 0px 0px 10px black;
     border: solid 2px rgb(90, 74, 66);
+    margin-left: 0.4rem;
 }
+
 /*----------BUTTONS :-----------*/
-#launcher, #view_score_button, #launch_sirop, #submit_score_btn, .button_add_score, #ia_hide_button {
+#launcher,
+#view_score_button,
+#launch_sirop,
+#submit_score_btn,
+.button_add_score,
+#ia_hide_button {
     font-size: 1.2em;
     font-weight: bolder;
     border: solid 2px var(--border-color2);
     text-align: center;
     background-color: var(--main-bg-color);
-    color : var(--main-font-color);
+    color: var(--main-font-color);
     box-shadow: inset 0px 0px 10px black;
     padding: 0.5rem 1rem;
     text-shadow: var(--text-shadow);
+    outline: none;
 }
-#launcher:hover, #view_score_button:hover, #launch_sirop:hover, .button_add_score:hover {
+
+#launcher:active,
+#view_score_button:active,
+#launch_sirop:active,
+.button_add_score:hover {
     font-size: 1.2em;
     font-weight: normal;
     color: lightgreen;
     border: solid 2px lightgreen;
     background-color: rgb(121, 204, 121);
 }
+
+.current_action {
+    padding: 0 0.4rem;
+}
+
 .button_container {
     position: relative;
     display: flex;
     justify-content: center;
+    margin-bottom: 2rem;
 }
-#launch_sirop{
+
+#launch_sirop {
     display: none;
 }
+
 #ia_hide_button {
     position: absolute;
     width: 100%;
     visibility: hidden;
 }
+
 /*-------- GAMBLE ---------------*/
 .gamble_dice {
     font-size: 2rem;
 }
+
 /*------------- ENDGAME -------------*/
 .endgame {
     height: 100%;
@@ -319,10 +328,8 @@ ul .titles {
     box-shadow: 0px 0px 20px black;
     border: solid 2px var(--border-color2);
     background-color: var(--main-bg-color);
-    padding: 5px 5px;
     /*-------- TEXT -----------*/
-    color: #f0f;
-    text-shadow: var(--text-shadow);
+    text-shadow: 0px 0px 10px black;
     text-align: center;
     font-weight: 800;
     font-size: 2rem;
@@ -333,39 +340,225 @@ ul .titles {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right 35% bottom 45%;
-    align-items: bottom;
-    padding: 20%;
-}
-.header_logo-link {
-    display:flex;
-    justify-content: center;
-    text-align: center;
-}
-.header-title {
     display: flex;
-    width: 100%;
-    /* background-color: #f0f; */
-    margin-bottom: 0;
-    padding-bottom: 0;
+    justify-content: center;
+    z-index: 99;
 }
-/* .fixed {
-    position: fixed;
-} */
+
+.new_game-link {
+    background-color: var(--main-bg-color);
+    border: solid 2px var(--border-color2);
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+.endgame-content {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.endgame p {
+    margin-top: 1rem;
+    margin: 0 1rem;
+}
+
+#score_list {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 0;
+}
+
 .endgame>h2 {
     font-size: 3rem;
-    color: #f0f;
+    text-shadow: 0px 0px 10px black;
 }
-.hidden_score, .hidden_round_nb , .hidden_fig_stats, .hidden_sirop_stats {
+
+.hidden_score,
+.hidden_round_nb,
+.hidden_fig_stats,
+.hidden_sirop_stats {
     position: absolute;
     visibility: hidden;
 }
+
 .hidden {
     visibility: hidden;
 }
+
 .visible {
     visibility: visible;
 }
+
+.display_none {
+    display: none;
+}
+
+.display_flex {
+    display: flex;
+}
+
+.player_name-input {
+    width: 90%;
+    margin: auto;
+}
+
+.endgame form {
+    margin-top: 1rem;
+}
+
+#submit_score_btn {
+    width: 90%;
+    margin: auto;
+    margin-top: 1rem;
+}
+
 /*--------- STATS PAGE -----------*/
 li span {
     font-weight: bolder;
+}
+
+@media screen and (min-width: 575px) {
+
+    #launcher:hover,
+    #view_score_button:hover,
+    #launch_sirop:hover {
+        font-size: 1.2em;
+        font-weight: normal;
+        color: lightgreen;
+        border: solid 2px lightgreen;
+        background-color: rgb(121, 204, 121);
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .game_container {
+        height: calc(100vh - 3rem);
+    }
+    .dices_table {
+        width: 95vw;
+    }
+
+    .score_container div {
+        font-size: 1rem;
+        padding: 0;
+    }
+
+    #board {
+        padding: 1rem 0;
+    }
+
+    .button_container {
+        height: 3.6rem;
+    }
+
+    #ia_hide_button {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .scoretable hr {
+        margin: 0;
+    }
+    .endgame h2 {
+        font-size: 2.2rem;
+    }
+
+    .endgame p,
+    .endgame form {
+        font-size: 1.6rem;
+    }
+
+    .burger_links {
+        display: none;
+    }
+
+    .header_logo-container {
+        position: absolute;
+        padding-top: 0.4rem;
+    }
+
+    .header-title {
+        display: none;
+        background-color: green;
+    }
+
+    header {
+        min-height: auto;
+    }
+
+    .burger-container {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .ia_log {
+        font-size: 0.8rem;
+        padding: 0;
+        padding-bottom: 0.4rem;
+        margin: 0;
+    }
+
+    .header_logo-burger {
+        display: flex;
+    }
+
+    .header_link a {
+        display: block;
+        width: 90%;
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 0.6rem;
+    }
+
+    p {
+        margin: 0;
+    }
+    .scoretable_container {
+        position: absolute;
+        right: 0;
+        top: -2px;
+    }
+    
+    #view_score_button {
+        display: flex;
+        top: 4px;
+        right: 4px;
+        z-index: 10;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6) inset, 0px 0px 20px rgb(0, 0, 0);
+        transition: all 0.5s ease-in-out;
+    }
+    .scoretable_container.scoretable_actif #view_score_button {
+        color: #6c757d;
+        border-color: #6c757d;
+        box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.6) inset, 0px 0px 200px rgba(255, 255, 255, 0.5);
+    }
+    
+    .scoretable {
+        background-color: var(--main-bg-color);
+        top: 0.4rem;
+        z-index: 9;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 0.3s ease-in-out;
+        width: 45vw;
+    }
+    
+    .scoretable h3 {
+        font-size: 1.2rem;
+        padding-right: 3.4rem;
+    }
+    #score_list li {
+        text-align: start;
+    }
+    .scoretable_container.scoretable_actif .scoretable {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

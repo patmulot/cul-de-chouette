@@ -18,67 +18,53 @@ const gamble = {
         let currentElementClicked = event.currentTarget;
         for ( let i = 1; i < 7; i++) {
             if  (currentElementClicked.classList.contains("gamble_dice_"+i) ) {
-                // alert('prout prout');
                 gamble.selectedDice = i;
-                console.log('dés parié : ' + gamble.selectedDice);
                 gamble.hydeGamblePlayer();
             }
         }
     },
     displayGamblePlayer : function() {
         let gambleBtnsElement = document.querySelector('.gamble_buttons');
-        console.log('display');
-        if ( gambleBtnsElement.classList.contains("hidden") ) {
-        gambleBtnsElement.classList.remove("hidden");
-        gambleBtnsElement.classList.add("visible")
+        if ( gambleBtnsElement.classList.contains("display_none") ) {
+        gambleBtnsElement.classList.remove("display_none");
+        gambleBtnsElement.classList.add("display_flex")
         } else {
-            gambleBtnsElement.classList.add("visible")
+            gambleBtnsElement.classList.add("display_flex")
         }
     },
     hydeGamblePlayer : function() {
         let gambleBtnsElement = document.querySelector('.gamble_buttons');
-        console.log('display');
-        if ( gambleBtnsElement.classList.contains("visible") ) {
-        gambleBtnsElement.classList.remove("visible");
-        gambleBtnsElement.classList.add("hidden")
+        if ( gambleBtnsElement.classList.contains("display_flex") ) {
+        gambleBtnsElement.classList.remove("display_flex");
+        gambleBtnsElement.classList.add("display_none")
         } else {
-            gambleBtnsElement.classList.add("hidden")
+            gambleBtnsElement.classList.add("display_none")
         }
     },
     checkGamblePlayer : function() {
         if (gamble.selectedDice == gamble.gambleDice) {
             if ( app.currentPlayer == app.player ) {
-
                 gamble.gambleAction = gamble.gamblePlayer + " a gagné son pari";
-
                 gamble.iaScoreGamble = 25;
-                console.log('gamble iaScoreGamble = ' + gamble.iaScoreGamble);
                 gamble.scoreGamble = 0;
                 iaPlayer1.player1scoreTab.push(gamble.scoreGamble);
-
                 iaPlayer1.player1figureTab.push('pari sirotage réussi !');
             } else {
 
                 gamble.gambleAction = gamble.gamblePlayer + " as gagné ton pari";
-
                 gamble.scoreGamble = 25;
                 gamble.iaScoreGamble = 0;
                 scores.scoreTab.push(gamble.scoreGamble);
-
                 scores.figureTab.push('pari sirotage réussi !');
             };
             return
         } else {
             if (  app.currentPlayer == app.player ) {
-    
                 gamble.gambleAction = gamble.gamblePlayer + " a perdu son pari";
-    
                 iaPlayer1.player1scoreTab.push('pari sirotage perdu !');
                 return
             } else {
-    
                 gamble.gambleAction = gamble.gamblePlayer + " as perdu ton pari";
-    
                 scores.figureTab.push('pari sirotage perdu !');
                 return
             };

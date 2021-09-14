@@ -19,48 +19,57 @@ const app = {
 
         styleJs.EditIaPlayerLog();
 
-        let burgerElement = document.querySelector(".burger-container");
-        burgerElement.addEventListener("click", app.handleClickOnBurgerIcon);
+        
+        // NEW BURGER : 
+        burger.init();
+        // NEW BURGER : 
+
+
+        // let burgerElement = document.querySelector(".burger-container");
+        // let burgerElement = document.querySelector(".burger-icon");
+        // burgerElement.addEventListener("click", app.handleClickOnBurgerIcon);
+        // burgerElement.addEventListener("click", app.handleClickOnBurgerIcon);
         window.addEventListener('resize', app.displayBurgerLinks);
     },
-    burgerStatus: true,
-    handleClickOnBurgerIcon(evt) {
-        evt.preventDefault();
-        let navElementToDisplay = document.querySelector(".burger_links");
-        let libContainerElement = document.querySelector(".nav-links-container");
-        if (app.burgerStatus === true) {
-            navElementToDisplay.style.display = "flex";
-            libContainerElement.scrollTop = 1000;
-            app.burgerStatus = false;
-        } else if (app.burgerStatus === false) {
-            navElementToDisplay.style.display = "none";
-            app.burgerStatus = true;
-        };
-    },
-    displayBurgerLinks(evt) {
-        evt.preventDefault();
-        let navElementToDisplay = document.querySelector(".burger_links");
-        if (window.window.innerWidth > 575) {
-            navElementToDisplay.style.display = "flex";
-        } else {
-            navElementToDisplay.style.display = "none";
-        };
-    },
+    // burgerStatus: true,
+    // handleClickOnBurgerIcon(evt) {
+    //     evt.preventDefault();
+    //     let headerLogo = document.querySelector(".header_logo");
+    //     let navElementToDisplay = document.querySelector(".burger_links");
+    //     let libContainerElement = document.querySelector(".nav-links-container");
+    //     if (app.burgerStatus === true) {
+    //         headerLogo.style.display = "none";
+    //         navElementToDisplay.style.display = "flex";
+    //         libContainerElement.scrollTop = 1000;
+    //         app.burgerStatus = false;
+    //     } else if (app.burgerStatus === false) {
+    //         headerLogo.style.display = "flex";
+    //         navElementToDisplay.style.display = "none";
+    //         app.burgerStatus = true;
+    //     };
+    // },
+    // displayBurgerLinks(evt) {
+    //     evt.preventDefault();
+    //     let headerLogo = document.querySelector(".header_logo");
+    //     let navElementToDisplay = document.querySelector(".burger_links");
+    //     if (window.window.innerWidth > 575) {
+    //         navElementToDisplay.style.display = "flex";
+    //     } else {
+    //         navElementToDisplay.style.display = "none";
+    //     };
+    //     headerLogo.style.display = "flex";
+    //     styleJs.resize();
+    // },
     player: 'Tu',
     currentPlayer: [],
     btn: document.getElementById('launcher'),
     siropBtn: document.getElementById('launch_sirop'),
     action: '',
     //-----------BUTTON FUNCTIONS :----------------------
-    launchBtn: function () {
-
-        // styleJs.resize();
-
+    launchBtn: function (evt) {
+        evt.preventDefault;
         app.currentPlayer = app.player;
-        console.log(app.currentPlayer);
         gamble.gamblePlayer = iaPlayer1.player1Name;
-        console.log(gamble.gamblePlayer);
-
         if (app.btn.value === 'Lancer la Chouette') {
             app.launchBtnChouette();
             dices.diceChouetteAnimation();
@@ -68,33 +77,24 @@ const app = {
             app.launchBtnCdc();
             dices.diceCdcAnimation();
             scores.checkFigure();
-
             app.playerAction(app.action);
-
             // incrémentation du siropTab :
             scores.siropTab.push('');
-
         } else if (app.btn.value === 'Relancer le Dés') {
             app.launchBtnOneDice();
             dices.diceOneAnimation();
-
             // fonction check sirotage réussi ou non
             gamble.checkGamblePlayer();
             scores.siropTab.pop();
-
             rules.checkSiropSuccess();
             scores.siropTab.push(rules.checkSiropSuccess());
-
             app.playerAction(app.action);
-
         } else if (app.btn.value === 'Tour suivant ?') {
             app.launchBtnNxt();
             rules.siropBtnDNone();
             scores.checkFinalScore();
-
             iaPlayer1.iaStartRound();
             scores.checkFinalScore();
-
             gamble.selectedDice = 0;
             gamble.gambleDice = 0;
             gamble.gambleAction = '';
@@ -127,21 +127,16 @@ const app = {
     launchBtnCdc: function () {
         // création de la variable pour la valeur random du dés
         let dice3Value = dices.diceRand();
-
         dices.deleteVisible(2);
         dices.diceDesign(dice3Value, 2);
-
         dices.dicesTab[2] = dice3Value;
-
         rules.displaySirotage();
-
         app.btn.value = 'Tour suivant ?';
         // app.btn.value = 'Attendez votre tour...';
     },
     launchBtnNxt: function () {
         app.currentRuleAction = '';
         scores.scoreCell(scores.setScore());
-
         app.btn.value = 'Lancer la Chouette';
         scores.updateScoreTab();
     },
@@ -149,32 +144,28 @@ const app = {
         // création de la variable pour la valeur random du dés
         let currentDiceAnimationClass = dices.checkAnimClassNone();
         let diceSiropValue = dices.diceRand();
-
         gamble.gambleDice = diceSiropValue;
-
         dices.deleteVisible(currentDiceAnimationClass);
         dices.diceDesign(diceSiropValue, currentDiceAnimationClass);
-
         dices.dicesTab[currentDiceAnimationClass] = diceSiropValue;
         app.btn.value = 'Tour suivant ?';
-
     },
-    scoreCollapse: function () {
-        let scoreTable = document.querySelector('.scoretable');
-        if (scoreTable.classList.contains('visible')) {
-            scoreTable.classList.remove('visible');
-            scoreTable.classList.add('display_none');
-        } else {
-            scoreTable.classList.remove('display_none');
-            scoreTable.classList.add('visible');
-        }
+    scoreCollapse: function (evt) {
+        evt.currentTarget.closest(".scoretable_container").classList.toggle("scoretable_actif");
+        // let scoreTable = document.querySelector('.scoretable');
+        // if (scoreTable.classList.contains('visible')) {
+        //     scoreTable.classList.remove('visible');
+        //     scoreTable.classList.add('display_none');
+        // } else {
+        //     scoreTable.classList.remove('display_none');
+        //     scoreTable.classList.add('visible');
+        // }
     },
     playerAction: function (currentAction) {
         let Action = currentAction;
         let RuleAction = rules.currentRule;
         let gambleAction = gamble.gambleAction;
         let divCurrentAction = document.querySelector('.current_action');
-
         if (rules.currentRule == '') {
             divCurrentAction.innerHTML = Action;
         } else if (rules.isSirotage == 1) {
@@ -185,11 +176,9 @@ const app = {
     },
     // ------ ADD SIROTAGE BUTTON -------
     launchSirop: function () {
-
         app.action = app.currentPlayer + ' as choisit de siroter...';
         iaPlayer1.iaGamble();
         app.playerAction(app.action);
-
         let dice1Value = dices.dicesTab[0];
         let dice2Value = dices.dicesTab[1];
         let dice3Value = dices.dicesTab[2];
@@ -197,4 +186,9 @@ const app = {
     },
 }
 // styleJs.resize();
+// let burgerElement = document.querySelector(".burger-container");
+// let burgerElement = document.querySelector(".burger-icon");
+// burgerElement.addEventListener("click", app.handleClickOnBurgerIcon);
+// burgerElement.addEventListener("click", app.handleClickOnBurgerIcon);
+window.addEventListener('resize', app.displayBurgerLinks);
 document.addEventListener('DOMContentLoaded', app.init);

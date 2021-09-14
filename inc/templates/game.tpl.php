@@ -37,14 +37,16 @@
             </div>
         </div>
         <div class="scoretable_container">
-            <div class="scoretable display_none">
+            <div class="scoretable">
                 <h3>Score history :</h3>
-                <ul id="score_list"></ul>
+                <ul id="score_list">
+                    <hr>
+                </ul>
             </div>
             <input id="view_score_button" type="button" value="S">
         </div>
     </div>
-    <div class="gamble_buttons row hidden">
+    <div class="gamble_buttons row display_none">
         <div class="col-3"></div>
         <div class="col-1"><i class="fas fa-dice-one gamble_dice gamble_dice_1"></i></div>
         <div class="col-1"><i class="fas fa-dice-two gamble_dice gamble_dice_2"></i></div>
@@ -55,20 +57,37 @@
         <div class="col-3"></div>
         <!-- <input id="gamble_dice_6" type="button" value="Siroter ?"><i class="fas fa-dice-six"></i> -->
     </div>
-    <div class="endgame display_none">
-        <h2>Bravo !!!</h2>
-        <div class="endgame_img"></div>
-        <p>
-            tu as gagné avec un score total de <span class="finalScore"></span>.
-        </p>
-        <form action="index.php?page=scores&name="<?= $playerName; ?> method="post">
-            <p>Votre nom : <input type="text" name="playerName" /></p>
-            <input type="text" name="playerScore" class="hidden_score"/> 
-            <input type="text" name="rounds" class="hidden_round_nb"/> 
-            <input type="text" name="figstats" class="hidden_fig_stats"/> 
-            <input type="text" name="siropstats" class="hidden_sirop_stats"/>
-            <input id="submit_score_btn" type="submit" value="Envoyer votre score">
-        </form>
+    <div class="endgame win display_none">
+        <div class="endgame-content">
+            <h2>Bravo !!!</h2>
+            <div class="endgame_img"></div>
+            <p>
+                tu as gagné avec un score total de <span class="finalScore"></span>.
+            </p>
+            <form action="index.php?page=scores&name="<?= $playerName; ?> method="post">
+                <div>Votre nom : <input class="player_name-input" type="text" name="playerName" /></div>
+                <input type="text" name="playerScore" class="hidden_score"/> 
+                <input type="text" name="rounds" class="hidden_round_nb"/> 
+                <input type="text" name="figstats" class="hidden_fig_stats"/> 
+                <input type="text" name="siropstats" class="hidden_sirop_stats"/>
+                <input id="submit_score_btn" type="submit" value="Envoyer">
+            </form>
+            <div class="new_game-link">
+                <a href="index.php">retour à la page d'accueil</a>
+            </div>
+        </div>
+    </div>
+    <div class="endgame lost display_none">
+        <div class="endgame-content lost_game">
+            <h2>Perdu</h2>
+            <div class="endgame_img"></div>
+            <p>
+                tu feras mieux la prochaine fois.
+            </p>
+            <div class="new_game-link">
+                <a href="index.php?page=game">Nouvelle partie ? <i class="fas fa-dice dice_icon"></i></a>
+            </div>
+        </div>
     </div>
 
     <div class="ia_log">
@@ -82,11 +101,11 @@
     </div>
 
     <div class="score_container row">
-        <div  class="col-12 col-sm-4 score_style">Tour n° 
+        <div  class="col-6 score_style">Tour n° 
             <span id="counter">0</span>
         </div>
-        <div class="col-12 col-sm-4 score_style">Score :
-            <span id="score_cell" class="col-12 col-md-4 score_style">0</span>
+        <div class="col-6 score_style">Score 
+            <span id="score_cell" class="score_style">0</span>
         </div>
     </div>
 
