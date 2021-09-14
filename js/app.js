@@ -21,7 +21,7 @@ const app = {
         burger.init();
         window.addEventListener('resize', app.displayBurgerLinks);
             if (window.window.innerWidth < 575) {
-                window.scrollTo(0, 32);
+                window.scrollTo(0, 48);
             }
     },
     player: 'Tu',
