@@ -30,6 +30,11 @@ const app = {
         // burgerElement.addEventListener("click", app.handleClickOnBurgerIcon);
         // burgerElement.addEventListener("click", app.handleClickOnBurgerIcon);
         window.addEventListener('resize', app.displayBurgerLinks);
+        window.addEventListener('resize', function() {
+            if (window.window.innerWidth < 575) {
+                document.body.requestFullScreen();
+            }
+        })
     },
     // burgerStatus: true,
     // handleClickOnBurgerIcon(evt) {
