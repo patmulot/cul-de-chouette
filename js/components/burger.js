@@ -3,7 +3,7 @@ const burger = {
         const burgerIconElement = document.querySelector(".burger-icon");
         burgerIconElement.addEventListener("click", burger.handleClickOneBurgerIcon);
         window.addEventListener('resize', burger.handleClickOnBody);
-        // document.querySelector("main").addEventListener("click", burger.handleClickOnBody);
+        document.querySelector("main").addEventListener("click", burger.handleClickOnBody);
     },
     handleClickOneBurgerIcon(evt) {
         evt.preventDefault();
