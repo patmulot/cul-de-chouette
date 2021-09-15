@@ -124,11 +124,10 @@
 }
 
 .new_player-form-background {
-    scroll-margin-top: 0;
     position: absolute;
     width: 100vw;
-    height: 100%;
-    top: 0;
+    height: 100vh;
+    bottom: 0;
     background-color: rgba(0, 0, 0, 0.4);
     justify-content: center;
 }
