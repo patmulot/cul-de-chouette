@@ -122,12 +122,12 @@
 .new_player-form {
     display: none;
     z-index: 98;
+    height: 200%;
 }
 
 .new_player-form-background {
     position: absolute;
     width: 100vw;
-    height: 200%;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.4);
     justify-content: center;
