@@ -15,7 +15,6 @@ const burger = {
         headerLogoElement.classList.toggle("active-header-logo");
     },
     handleClickOnBody(evt) {
-        console.log("body clicked");
         evt.preventDefault();
         let burgerButton = document.querySelector(".burger-icon");
         let linksToDisplayElements = document.querySelector(".nav_links-container");

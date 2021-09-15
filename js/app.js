@@ -23,6 +23,8 @@ const app = {
             if (window.window.innerWidth < 575) {
                 window.scrollTo(0, 48);
             }
+        // SCORES SHEET ADD PLAYER : 
+        scoresSheet.init();
     },
     player: 'Tu',
     currentPlayer: [],
