@@ -49,9 +49,9 @@
     margin: 0;
 }
 
-.points-add:hover,
-.points-remove:hover,
-.player-remove-button:hover {
+.points-add:active,
+.points-remove:active,
+.player-remove-button:active {
     background-color: rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     cursor: pointer;
@@ -89,13 +89,13 @@
     padding: 0;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
 }
-.player-add-container:hover {
+.player-add-container:active {
     text-shadow: 0 0 500px rgba(0, 0, 0, 1);
     color: var(--main-bg-color);
     font-size: 1.6rem;
     cursor: pointer;
 }
-.player-add-container:hover div {
+.player-add-container:active div {
     border: solid 3px var(--main-bg-color);
     box-shadow: 0 0 100px var(--main-bg-color), 0 0 10px rgba(0, 0, 0, 0.3) inset;
 }
@@ -107,7 +107,7 @@
     transition: all 0.1s ease-in-out;
 }
 
-.player-add-container span:hover{
+.player-add-container span:active{
     font-size: 1.6rem;
 }
 
@@ -185,7 +185,7 @@
         width: 2rem;
         font-size: 2rem;
     }
-    .player-add-container:hover {
+    .player-add-container:active {
         font-size: 1.6rem;
     }
     .player-add-container:hover div {
