@@ -3,12 +3,14 @@ const scoresSheet = {
     currentPlayerId: 0,
     currentPlayerName: "Nouveau Joueur",
     currentPlayerScore: 0,
+    // isScoreMaxSetting: false,
     isNewPlayerAdd: true,
     isPlayerScoreAdd: false,
     currentPlayerIdToUpdate: 0,
     currentScoreElementToUpdate: "",
     currentScoreCoef: 1,
     winner: "",
+    scoreMax: 343,
     'init': function () {
         const addPlayerElement = document.querySelector(".player-add-container");
         addPlayerElement.addEventListener("click", scoresSheet.handleClickOneAddPlayer);
@@ -30,6 +32,34 @@ const scoresSheet = {
         for (oneButton of removePlayerButton) {
             oneButton.addEventListener("click", scoresSheet.removePlayer);
         }
+        let setMaxScoreButton = document.querySelectorAll(".max_score-button");
+        for (oneButton of setMaxScoreButton) {
+            oneButton.addEventListener("click", scoresSheet.editMaxScore);
+        }
+
+        let scoreMaxElement = document.querySelector(".score_max");
+        scoreMaxElement.textContent = scoresSheet.scoreMax;
+    },
+    editMaxScore(evt) {
+        evt.preventDefault();
+        let scoreMaxElement = document.querySelector(".score_max");
+        scoreMaxElement.style.display = "none";
+        let scoreMaxInput = document.querySelector(".edit-score_max");
+        scoreMaxInput.style.display = "initial";
+        scoreMaxInput.focus();
+        scoreMaxInput.addEventListener("blur", scoresSheet.updateScoreMax);
+
+    },
+    updateScoreMax() {
+        let scoreMaxInput = document.querySelector(".edit-score_max");
+        let scoreMaxElement = document.querySelector(".score_max");
+        console.log(scoreMaxInput.value);
+        scoresSheet.scoreMax = scoreMaxInput.value;
+        scoreMaxInput.style.display = "none";
+        scoreMaxElement.style.display = "initial";
+        scoresSheet.init();
+        scoreMaxElement.textContent = scoreMaxInput.value;
+        scoreMaxInput.value = "";
     },
     handleClickOneAddPlayer(evt) {
         evt.preventDefault();
@@ -43,6 +73,9 @@ const scoresSheet = {
         let playerNameInputElement = document.querySelector("#new_player-form-name");
         playerNameInputElement.style.display = "flex";
         playerNameInputElement.focus();
+        setTimeout(function () {
+            newPlayerFormElement.style.opacity = 1;
+        }, 100);
     },
     validateNewPlayer(evt) {
         if (scoresSheet.isNewPlayerAdd) {
@@ -74,6 +107,7 @@ const scoresSheet = {
         }
         let newPlayerFormElement = document.querySelector(".new_player-form");
         newPlayerFormElement.style.display = "none";
+        isScoreMaxSetting = false;
     },
     createNewPlayer(newPlayer) {
         let playerTemplateElement = document.querySelector(".player-tpl");
@@ -125,7 +159,7 @@ const scoresSheet = {
     },
     checkEndGame() {
         for (let onePlayer of scoresSheet.players) {
-            if (onePlayer.score >= 343) {
+            if (onePlayer.score >= scoresSheet.scoreMax) {
                 scoresSheet.winner = onePlayer.name;
                 scoresSheet.isNewPlayerAdd = false;
                 scoresSheet.isPlayerScoreAdd = false;

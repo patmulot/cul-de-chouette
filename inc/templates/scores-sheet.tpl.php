@@ -1,5 +1,6 @@
 <article class="container article scores_sheet-container">
-    <h1 class="row">FEUILLE DE SCORE</h1>
+    <h1 class="row page-title">FEUILLE DE SCORE</h1>
+    <button class="max_score-button">score max : <span class="score_max">343</span><input class="edit-score_max" type="number"></button>
     <div class="row">
         <ul class="score-list">
             <li class="row score-header">
