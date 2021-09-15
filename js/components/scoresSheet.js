@@ -39,6 +39,25 @@ const scoresSheet = {
 
         let scoreMaxElement = document.querySelector(".score_max");
         scoreMaxElement.textContent = scoresSheet.scoreMax;
+
+
+
+        let playerNameInputElement = document.querySelector("#new_player-form-name");
+        let scoreInput = document.querySelector("#score_input");
+
+        playerNameInputElement.addEventListener('keydown', function (evt) {
+            if (evt.key === "Enter") {
+                playerNameInputElement.addEventListener("blur", scoresSheet.validateNewPlayer);
+                playerNameInputElement.blur();
+            }
+        });
+        scoreInput.blur();
+        scoreInput.addEventListener('keydown', function (evt) {
+            if (evt.key === "Enter") {
+                scoreInput.addEventListener("blur", scoresSheet.validateNewPlayer);
+                scoreInput.blur();
+            }
+        });
     },
     editMaxScore(evt) {
         evt.preventDefault();
@@ -47,9 +66,15 @@ const scoresSheet = {
         let scoreMaxInput = document.querySelector(".edit-score_max");
         scoreMaxInput.style.display = "initial";
         scoreMaxInput.focus();
+        // scoreMaxInput.addEventListener('keydown', function (evt) {
+        //     if (evt.key === "Enter") {
+        //         scoreMaxInput.blur();
+        //     }
+        // });
         scoreMaxInput.addEventListener("blur", scoresSheet.updateScoreMax);
 
     },
+
     updateScoreMax() {
         let scoreMaxInput = document.querySelector(".edit-score_max");
         let scoreMaxElement = document.querySelector(".score_max");
@@ -139,7 +164,7 @@ const scoresSheet = {
         scoresSheet.currentPlayerIdToUpdate = evt.currentTarget.closest(".player-row").dataset.playerId;
         scoresSheet.editScore();
     },
-    editScore() {
+    editScore(evt) {
         scoresSheet.isNewPlayerAdd = false;
         scoresSheet.isPlayerScoreAdd = true;
         let playerNameInputElement = document.querySelector("#new_player-form-name");
@@ -149,6 +174,11 @@ const scoresSheet = {
         let scoreInput = document.querySelector("#score_input");
         scoreInput.style.display = "flex";
         scoreInput.focus();
+        // scoreInput.addEventListener('keydown', function(evt) {
+        //     if(evt.key === "Enter") {
+        //         scoresSheet.validateNewPlayer();
+        //     }
+        // });
     },
     updateScore(newScore) {
         scoresSheet.currentScoreElementToUpdate.textContent = newScore;
