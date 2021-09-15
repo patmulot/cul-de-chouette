@@ -26,6 +26,10 @@ const scoresSheet = {
         for (oneButton of removePointsButton) {
             oneButton.addEventListener("click", scoresSheet.removePointsToPlayer);
         }
+        let removePlayerButton = document.querySelectorAll(".player-remove");
+        for (oneButton of removePlayerButton) {
+            oneButton.addEventListener("click", scoresSheet.removePlayer);
+        }
     },
     handleClickOneAddPlayer(evt) {
         evt.preventDefault();
@@ -131,7 +135,6 @@ const scoresSheet = {
     },
     displayEndGame() {
         scoresSheet.displayNewPlayerForm();
-        window.scrollTo(0, 0);
         document.querySelector("#winner").textContent = scoresSheet.winner;
         document.querySelector(".submit-player_name").style.display = "none";
         document.querySelector("#new_player-form-name").style.display = "none";
@@ -141,5 +144,9 @@ const scoresSheet = {
             document.querySelector("#endgame_message-container").style.opacity = 1;
             document.querySelector(".new_player-form-background").style.backgroundColor = "black";
         }, 100);
+    },
+    removePlayer(evt) {
+        evt.preventDefault();
+        evt.currentTarget.closest("li").remove();
     }
 }
