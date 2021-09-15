@@ -131,6 +131,7 @@ const scoresSheet = {
     },
     displayEndGame() {
         scoresSheet.displayNewPlayerForm();
+        window.scrollTo(0, 0);
         document.querySelector("#winner").textContent = scoresSheet.winner;
         document.querySelector(".submit-player_name").style.display = "none";
         document.querySelector("#new_player-form-name").style.display = "none";
