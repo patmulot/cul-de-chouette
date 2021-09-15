@@ -12,14 +12,12 @@
 
 
             <div class="new_player-tpl-container">
-
-
-
-
-                <!-- <li class="row player-row">
-                    <div class="col-3 player-name">
+            
+                <template class="player-tpl">
+                <li class="row player-row">
+                    <div class="col-4 player-name">
                         <span class="name_link">
-                            Nouveau Joueur 0
+                            Nouveau Joueur
                         </span>
                     </div>
                     <div class="col-3 player-score">
@@ -29,36 +27,15 @@
                         <button class="points-add"><h2>+</h2></button>
                         <button class="points-remove"><h2>-</h2></button>
                     </div>
-                    <div class="col-3 player-remove">
+                    <div class="col-2 player-remove">
                         <button class="player-remove-button"><h2>x</h2></button>
                     </div>
                     <hr>                  
-                </li> -->
-
-
+                </li>
+                </template>
 
             </div>
 
-            <template class="player-tpl">
-            <li class="row player-row">
-                <div class="col-4 player-name">
-                    <span class="name_link">
-                        Nouveau Joueur
-                    </span>
-                </div>
-                <div class="col-3 player-score">
-                    000
-                </div>
-                <div class="col-3 points-actions">
-                    <button class="points-add"><h2>+</h2></button>
-                    <button class="points-remove"><h2>-</h2></button>
-                </div>
-                <div class="col-2 player-remove">
-                    <button class="player-remove-button"><h2>x</h2></button>
-                </div>
-                <hr>                  
-            </li>
-            </template>
 
             <li class="row player-add">
                 <div class="player-add-container">  
@@ -74,7 +51,19 @@
     <div class="new_player-form-background">
     </div>
     <label for="new_player-form-name">
-        <input type="text" id="new_player-form-name" placeholder="Nom du joueur">
+        <input type="text" id="new_player-form-name" class="new_player-form-inputs" placeholder="Nom du joueur">
+        <input type="number" id="score_input" class="new_player-form-inputs">
         <button class="submit-player_name">VALIDER</button>
+        <div id="endgame_message-container">
+            <p id="endgame_message">
+                <h1>
+                    PARTIE TERMINEE
+                    <br><br>
+                    Bravo
+                    <br>
+                    <span id="winner"></span>
+                </h1>
+            </p>
+        </div>
     </label>
 </div>
