@@ -121,6 +121,7 @@
 /* NEW PLAYER FORM */
 .new_player-form {
     display: none;
+    z-index: 98;
 }
 
 .new_player-form-background {
