@@ -12,8 +12,6 @@
     flex-direction: column;
     border-radius: 0.6rem;
     padding: 0.4rem;
-
-
     transition: all 0.3s ease-in-out;
     opacity: 1;
 }
@@ -41,7 +39,7 @@
     justify-content: center;
 }
 
-#messages {
+#messages_list {
     border-radius: 0.6rem;
     display: flex;
     flex-grow: 1;
@@ -95,8 +93,6 @@
     color: var(--main-font-color);
     background-color: var(--main-bg-color);
     border-color: solid 3px var(--main-font-color);
-
-
     transition: all 0.3s ease-in-out;
     opacity: 1;
 }

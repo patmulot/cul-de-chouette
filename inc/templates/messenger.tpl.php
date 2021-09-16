@@ -4,7 +4,7 @@
             <h3>MESSAGERIE</h3>
             <span class="messaging-close_button">x</span>
         </div>
-        <ul id="messages">
+        <ul id="messages_list">
         </ul>
         <form id="message_form" action="">
             <textarea name="message_input" id="message_input" rows="auto"></textarea>
