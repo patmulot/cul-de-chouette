@@ -25,6 +25,7 @@ const app = {
             }
         // SCORES SHEET ADD PLAYER : 
         scoresSheet.init();
+        messenger.init();
     },
     player: 'Tu',
     currentPlayer: [],
