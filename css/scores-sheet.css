@@ -128,6 +128,8 @@
     z-index: 98;
     opacity: 0;
     transition: all 0.3s ease-in-out;
+
+    overflow-y: hidden;
 }
 
 .new_player-form-background {

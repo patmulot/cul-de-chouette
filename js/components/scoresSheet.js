@@ -100,6 +100,7 @@ const scoresSheet = {
         scoresSheet.displayNewPlayerForm();
     },
     displayNewPlayerForm() {
+        document.querySelector("main").style.overflowY = "hidden";
         let scoreInput = document.querySelector("#score_input");
         scoreInput.style.display = "none";
         let newPlayerFormElement = document.querySelector(".new_player-form");
