@@ -13,9 +13,13 @@ const scoresSheet = {
     scoreMax: 343,
     'init': function () {
         const addPlayerElement = document.querySelector(".player-add-container");
-        addPlayerElement.addEventListener("click", scoresSheet.handleClickOneAddPlayer);
+        if (addPlayerElement) {
+            addPlayerElement.addEventListener("click", scoresSheet.handleClickOneAddPlayer);
+        }
         let newPlayerFormElement = document.querySelector(".new_player-form-background");
-        newPlayerFormElement.addEventListener("click", scoresSheet.hydeNewPlayerForm);
+        if (newPlayerFormElement) {
+            newPlayerFormElement.addEventListener("click", scoresSheet.hydeNewPlayerForm);
+        }
         let validatePlayerNameButton = document.querySelectorAll(".submit-player_name");
         for (oneButton of validatePlayerNameButton) {
             oneButton.addEventListener("click", scoresSheet.validateNewPlayer);
@@ -38,26 +42,31 @@ const scoresSheet = {
         }
 
         let scoreMaxElement = document.querySelector(".score_max");
-        scoreMaxElement.textContent = scoresSheet.scoreMax;
-
+        if (scoreMaxElement) {
+            scoreMaxElement.textContent = scoresSheet.scoreMax;
+        }
 
 
         let playerNameInputElement = document.querySelector("#new_player-form-name");
         let scoreInput = document.querySelector("#score_input");
+        if (playerNameInputElement) {
 
-        playerNameInputElement.addEventListener('keydown', function (evt) {
-            if (evt.key === "Enter") {
-                playerNameInputElement.addEventListener("blur", scoresSheet.validateNewPlayer);
-                playerNameInputElement.blur();
-            }
-        });
-        scoreInput.blur();
-        scoreInput.addEventListener('keydown', function (evt) {
-            if (evt.key === "Enter") {
-                scoreInput.addEventListener("blur", scoresSheet.validateNewPlayer);
-                scoreInput.blur();
-            }
-        });
+            playerNameInputElement.addEventListener('keydown', function (evt) {
+                if (evt.key === "Enter") {
+                    playerNameInputElement.addEventListener("blur", scoresSheet.validateNewPlayer);
+                    playerNameInputElement.blur();
+                }
+            });
+        }
+        if (scoreInput) {
+            scoreInput.blur();
+            scoreInput.addEventListener('keydown', function (evt) {
+                if (evt.key === "Enter") {
+                    scoreInput.addEventListener("blur", scoresSheet.validateNewPlayer);
+                    scoreInput.blur();
+                }
+            });
+        }
     },
     editMaxScore(evt) {
         evt.preventDefault();
