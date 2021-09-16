@@ -1,4 +1,3 @@
-    
     <div class="messaging-container messaging-container-active">
         <div class="messaging-header">
             <h3>MESSAGERIE</h3>
