@@ -1,6 +1,7 @@
 const messenger = {
 
     'init': function () {
+        console.log("messenger loaded");
         let closeMessengerButton = document.querySelector(".messaging-close_button");
         closeMessengerButton.addEventListener("click", messenger.handleClickOnCloseMessages);
 
