@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/scores-sheet.css">
     <link rel="stylesheet" href="css/dices-style.css">
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
@@ -27,16 +28,19 @@
             <div class="links-to-display">
                 <ul class="nav_links-container">
                     <li class="displayable_link">
-                        <a href="index.php?page=rules">Rules</a>
+                        <a href="index.php?page=rules">Règles</a>
                     </li>
                     <li class="displayable_link">
-                        <a href="index.php?page=game">Game<i class="fas fa-dice dice_icon"></i></a>
+                        <a href="index.php?page=game">Jouer<i class="fas fa-dice dice_icon"></i></a>
                     </li>
                     <li class="displayable_link">
                         <a href="index.php?page=scores">Scores</a>
                     </li>
                     <li class="displayable_link">
                         <a href="index.php?page=stats">Stats</a>
+                    </li>
+                    <li class="displayable_link">
+                        <a href="index.php?page=scores-sheet">Feuille de score</a>
                     </li>
                     <li id="burger-icon-container">
                         <div class="burger-icon">
