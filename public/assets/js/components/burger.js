@@ -1,9 +1,13 @@
 const burger = {
     'init': function () {
         const burgerIconElement = document.querySelector(".burger-icon");
+        if (burgerIconElement) {
         burgerIconElement.addEventListener("click", burger.handleClickOneBurgerIcon);
+        }
         window.addEventListener('resize', burger.handleClickOnBody);
-        document.querySelector("main").addEventListener("click", burger.handleClickOnBody);
+        if (document.querySelector("main")) {
+            document.querySelector("main").addEventListener("click", burger.handleClickOnBody);
+        }
     },
     handleClickOneBurgerIcon(evt) {
         evt.preventDefault();

@@ -41,11 +41,17 @@
 
 #messages_list {
     border-radius: 0.6rem;
-    display: flex;
     flex-grow: 1;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset;
     background-image: url(../img/background_paper.jpg);
     background-size: cover;
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#messages_list li {
+    color: black;
 }
 
 #message_form {

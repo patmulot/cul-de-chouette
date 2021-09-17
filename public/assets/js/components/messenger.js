@@ -9,17 +9,22 @@ const messenger = {
         openMessengerButton.addEventListener("click", messenger.handleClickOnOpenMessages);
 
         // SOCKET FOR MESSAGES ------------------------------------------
+        
         let socket = io();
+
         let messages = document.getElementById('messages_list');
         let form = document.getElementById('message_form');
         let input = document.getElementById('message_input');
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
+
+        form.addEventListener('submit', function (evt) {
+            console.log("submitting")
+            evt.preventDefault();
             if (input.value) {
                 socket.emit('chat message', input.value);
                 input.value = '';
             }
         });
+
         socket.on('chat message', function (msg) {
             let item = document.createElement('li');
             item.textContent = msg;
@@ -44,6 +49,7 @@ const messenger = {
         messengerElement.style.display = "flex";
         setTimeout(function () {
             messengerElement.classList.remove("messaging-container-active");
+            openMessengerButton.style.display = "none";
         }, 300);
         let openMessengerButton = document.querySelector(".display_messenger-button");
             openMessengerButton.classList.toggle("display_messenger-button-active");
