@@ -41,11 +41,13 @@ const messenger = {
     handleClickOnOpenMessages(evt) {
         evt.preventDefault();
         let messengerElement = document.querySelector(".messaging-container");
-        messengerElement.style.display = "flex";
-        setTimeout(function () {
-            messengerElement.classList.remove("messaging-container-active");
-        }, 300);
         let openMessengerButton = document.querySelector(".display_messenger-button");
-            openMessengerButton.classList.toggle("display_messenger-button-active");
+        openMessengerButton.classList.toggle("display_messenger-button-active");
+        messengerElement.classList.remove("messaging-container-active");
+        setTimeout(function () {
+        messengerElement.style.display = "flex";
+        openMessengerButton.style.display = "none";
+            // openMessengerButton.style.display = "none";
+        }, 300);
     },
 }

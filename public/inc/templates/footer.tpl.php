@@ -1,5 +1,6 @@
 <?php 
-    require __DIR__.'/messenger.tpl.php';
+
+    // require __DIR__.'/messenger.tpl.php';
 ?>
     </main>
     <footer class="footer container-fluid">
