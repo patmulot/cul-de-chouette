@@ -15,7 +15,7 @@ let chat = {
     // host: "ws://0.0.0.0:8080/",
     // host: "ws://127.0.0.1:8080/",
     // host: "ws://54.211.156.227:8080/",
-    host: "ws://172.31.26.91:8080/",
+    host: "ws://" + location.host + ":8000/",
     name: "",
     socket: null,
     htmltxt: null,
