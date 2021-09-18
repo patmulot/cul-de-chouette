@@ -23,7 +23,9 @@ class Chat implements MessageComponentInterface {
   // (C2) CONSTRUCTOR - INIT LIST OF CLIENTS
   public function __construct () {
     $this->clients = new \SplObjectStorage;
-    if ($this->debug) { echo "Chat server started.\r\n"; }
+    if ($this->debug) { 
+      echo "Chat server started.\r\n";
+    }
   }
 
   // (C3) ON CLIENT CONNECT - STORE INTO $THIS->CLIENTS
@@ -52,5 +54,6 @@ class Chat implements MessageComponentInterface {
 }
 
 // (D) WEBSOCKET SERVER START!
-$server = IoServer::factory(new HttpServer(new WsServer(new Chat())), 8080); // @CHANGE if not port 8080
+// $server = IoServer::factory(new HttpServer(new WsServer(new Chat())), 8080); // @CHANGE if not port 8080
+$server = IoServer::factory(new HttpServer(new WsServer(new Chat())), 3000); // @CHANGE if not port 8080
 $server->run();
