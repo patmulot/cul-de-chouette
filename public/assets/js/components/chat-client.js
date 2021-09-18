@@ -11,8 +11,8 @@ let chat = {
         }
     },
     // host: "ws://" + location.host + ":3000/",
-    host: "ws://" + location.host + ":8080/",
-    // host: "ws://0.0.0.0:8080/",
+    // host: "ws://" + location.host + ":8080/",
+    host: "ws://0.0.0.0:8080/",
     // host: "ws://127.0.0.1:8080/",
     name: "",
     socket: null,
@@ -40,9 +40,9 @@ let chat = {
             }
             document.getElementById("messages_list").appendChild(row);
         };
-        chat.socket.onerror = function (e) {
+        chat.socket.onerror = function (evt) {
             chat.swapform(0);
-            console.log(e);
+            console.log(evt);
             alert(`Failed to connect to ${chat.host}`);
         };
         return false;
