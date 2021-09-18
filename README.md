@@ -6,8 +6,8 @@ Jeu de dés "le cul de chouette" de la série Kaamelott, découverte de javascri
 
 quelques images :
 ---
-![cdc-img1](https://github.com/patmulot/cul-de-chouette/blob/main/cdc-img1.JPG)
+![cdc-img1](https://github.com/patmulot/cul-de-chouette/blob/master/cdc-img1.JPG)
 ---
-![cdc-img2](https://github.com/patmulot/cul-de-chouette/blob/main/cdc-img2.JPG)
+![cdc-img2](https://github.com/patmulot/cul-de-chouette/blob/master/cdc-img2.JPG)
 ---
-![cdc-img3](https://github.com/patmulot/cul-de-chouette/blob/main/cdc-img3.JPG)
+![cdc-img3](https://github.com/patmulot/cul-de-chouette/blob/master/cdc-img3.JPG)
