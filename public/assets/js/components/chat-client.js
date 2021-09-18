@@ -10,9 +10,10 @@ let chat = {
             document.getElementById("user_name_form-go").disabled = false;
         }
     },
+    // host : "ws://192.168.0.100:8080/", // @CHANGE to your own!
     // host: "ws:localhost:8080/",
-    host: "ws:ip-172-31-26-91/",
-    // host: "ws:ec2-54-211-156-227.compute-1.amazonaws.com:8080/",
+    // host: "ws://ip-172-31-26-91/",
+    host: "ws://ec2-54-211-156-227.compute-1.amazonaws.com:8080/",
     name: "",
     socket: null,
     htmltxt: null,
