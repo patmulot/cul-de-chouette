@@ -11,9 +11,10 @@ let chat = {
         }
     },
     // host: "ws://" + location.host + ":3000/",
-    host: "ws://" + location.host + ":8080/",
+    // host: "ws://" + location.host + ":8080/",
     // host: "ws://0.0.0.0:8080/",
     // host: "ws://127.0.0.1:8080/",
+    host: "ws://54.211.156.227:8080/",
     name: "",
     socket: null,
     htmltxt: null,
