@@ -10,8 +10,8 @@ let chat = {
             document.getElementById("user_name_form-go").disabled = false;
         }
     },
-    host: "ws://localhost:8080/",
-    // host: "ws:ec2-54-211-156-227.compute-1.amazonaws.com:8080/",
+    // host: "ws:localhost:8080/",
+    host: "ws:ec2-54-211-156-227.compute-1.amazonaws.com:8080/",
     name: "",
     socket: null,
     htmltxt: null,
