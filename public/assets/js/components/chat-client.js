@@ -11,8 +11,8 @@ let chat = {
         }
     },
     // host: "ws://" + location.host + ":3000/",
-    // host: "ws://" + location.host + ":8080/",
-    host: "ws://0.0.0.0:8080/",
+    host: "ws://" + location.host + ":8080/",
+    // host: "ws://0.0.0.0:8080/",
     // host: "ws://127.0.0.1:8080/",
     name: "",
     socket: null,
@@ -32,6 +32,7 @@ let chat = {
             chat.swapform(0);
         };
         chat.socket.onmessage = function (evt) {
+            console.log(evt.data);
             let msg = JSON.parse(evt.data),
                 row = document.createElement("li");
             row.innerHTML = `<div class="sender-name">${msg.n}</div><div class="sender-msg">${msg.m}</div>`;
