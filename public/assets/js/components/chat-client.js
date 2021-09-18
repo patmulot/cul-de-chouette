@@ -10,11 +10,11 @@ let chat = {
             document.getElementById("user_name_form-go").disabled = false;
         }
     },
-    host: "ws://" + location.host + ":8080/",
+    // host: "ws://" + location.host + ":8080/",
     // host: "ws:2a5a-54-211-156-227.ngrok.io:8080/",
     // host: "ws://2a5a-54-211-156-227.ngrok.io:8080/",
     // host: "ws://127.0.0.1:4040:8080/",
-    // host: "ws:localhost:8080/",
+    host: "ws://" + location.host + ":8080/",
     // host: "ws:ec2-54-211-156-227.compute-1.amazonaws.com:8080/",
     name: "",
     socket: null,
