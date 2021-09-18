@@ -78,10 +78,10 @@
     background-color: var(--main-bg-color);
     float: left;
 }
-#messages_list .current_user-message {
+/* #messages_list .current_user-message {
     background-color: #b00b69;
     align-items: flex-end;
-}
+} */
 /* .sender-msg {
 
 } */

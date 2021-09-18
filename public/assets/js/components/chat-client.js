@@ -1,4 +1,4 @@
-var chat = {
+let chat = {
     swapform: function (direction) {
         if (direction) {
             document.getElementById("user_name_form").style.display = "none";
@@ -10,7 +10,8 @@ var chat = {
             document.getElementById("user_name_form-go").disabled = false;
         }
     },
-    host: "ws:ec2-54-211-156-227.compute-1.amazonaws.com:8080/",
+    host: "ws:localhost:8080/",
+    // host: "ws:ec2-54-211-156-227.compute-1.amazonaws.com:8080/",
     name: "",
     socket: null,
     htmltxt: null,
