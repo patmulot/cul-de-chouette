@@ -76,7 +76,7 @@ $server = IoServer::factory(
       new Chat()
     )
   ),
-  8081
+  8080
 ); // @CHANGE if not port 8080
 // $server = IoServer::factory(new HttpServer(new WsServer(new Chat())), 3000);
 $server->run();
